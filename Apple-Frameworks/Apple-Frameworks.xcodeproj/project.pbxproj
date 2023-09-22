@@ -11,6 +11,7 @@
 		0DFA1BC02ABD954D003994A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA1BBF2ABD954D003994A7 /* ContentView.swift */; };
 		0DFA1BC22ABD954D003994A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DFA1BC12ABD954D003994A7 /* Assets.xcassets */; };
 		0DFA1BC62ABD954D003994A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DFA1BC52ABD954D003994A7 /* Preview Assets.xcassets */; };
+		0DFA1BCD2ABD95EB003994A7 /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA1BCC2ABD95EB003994A7 /* Framework.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		0DFA1BC12ABD954D003994A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DFA1BC32ABD954D003994A7 /* Apple_Frameworks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Apple_Frameworks.entitlements; sourceTree = "<group>"; };
 		0DFA1BC52ABD954D003994A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0DFA1BCC2ABD95EB003994A7 /* Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				0DFA1BC12ABD954D003994A7 /* Assets.xcassets */,
 				0DFA1BC32ABD954D003994A7 /* Apple_Frameworks.entitlements */,
 				0DFA1BC42ABD954D003994A7 /* Preview Content */,
+				0DFA1BCC2ABD95EB003994A7 /* Framework.swift */,
 			);
 			path = "Apple-Frameworks";
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DFA1BC02ABD954D003994A7 /* ContentView.swift in Sources */,
+				0DFA1BCD2ABD95EB003994A7 /* Framework.swift in Sources */,
 				0DFA1BBE2ABD954D003994A7 /* Apple_FrameworksApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
