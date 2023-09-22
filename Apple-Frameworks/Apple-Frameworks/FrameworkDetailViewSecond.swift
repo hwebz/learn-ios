@@ -1,5 +1,5 @@
 //
-//  FrameworkDetailView.swift
+//  FrameworkDetailViewSecond.swift
 //  Apple-Frameworks
 //
 //  Created by Personal on 23/09/2023.
@@ -7,15 +7,13 @@
 
 import SwiftUI
 
-struct FrameworkDetailView: View {
-    
+struct FrameworkDetailViewSecond: View {
     var framework: Framework
     @Binding var isShowingDetailView: Bool
     @State private var isShowingSafariView = false
     
     var body: some View {
         VStack {
-            XDismissButton(isShowingDetailView: $isShowingDetailView)
             Spacer()
             FrameworkTitleView(framework: framework)
             Text(framework.description)
@@ -35,8 +33,8 @@ struct FrameworkDetailView: View {
     }
 }
 
-struct FrameworkDetailView_Previews: PreviewProvider {
+struct FrameworkDetailViewSecond_Previews: PreviewProvider {
     static var previews: some View {
-        FrameworkDetailView(framework: MockData.sampleFramework, isShowingDetailView: .constant(false))
+        FrameworkDetailViewSecond(framework: MockData.sampleFramework, isShowingDetailView: .constant(false))
     }
 }
