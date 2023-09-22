@@ -15,6 +15,7 @@
 		0DFA1BD12ABE13DD003994A7 /* FrameworkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA1BD02ABE13DD003994A7 /* FrameworkDetailView.swift */; };
 		0DFA1BD32ABE1572003994A7 /* AFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA1BD22ABE1572003994A7 /* AFButton.swift */; };
 		0DFA1BD52ABE182A003994A7 /* FrameworkGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA1BD42ABE182A003994A7 /* FrameworkGridViewModel.swift */; };
+		0DFA1BD72ABE1C13003994A7 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA1BD62ABE1C13003994A7 /* SafariView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0DFA1BD02ABE13DD003994A7 /* FrameworkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkDetailView.swift; sourceTree = "<group>"; };
 		0DFA1BD22ABE1572003994A7 /* AFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFButton.swift; sourceTree = "<group>"; };
 		0DFA1BD42ABE182A003994A7 /* FrameworkGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkGridViewModel.swift; sourceTree = "<group>"; };
+		0DFA1BD62ABE1C13003994A7 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				0DFA1BD02ABE13DD003994A7 /* FrameworkDetailView.swift */,
 				0DFA1BD22ABE1572003994A7 /* AFButton.swift */,
 				0DFA1BD42ABE182A003994A7 /* FrameworkGridViewModel.swift */,
+				0DFA1BD62ABE1C13003994A7 /* SafariView.swift */,
 			);
 			path = "Apple-Frameworks";
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				0DFA1BD32ABE1572003994A7 /* AFButton.swift in Sources */,
 				0DFA1BBE2ABD954D003994A7 /* Apple_FrameworksApp.swift in Sources */,
 				0DFA1BD52ABE182A003994A7 /* FrameworkGridViewModel.swift in Sources */,
+				0DFA1BD72ABE1C13003994A7 /* SafariView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
