@@ -21,6 +21,9 @@
 		0DFA1BEF2ABE253B003994A7 /* FrameworkTitleViewSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA1BEE2ABE253B003994A7 /* FrameworkTitleViewSecond.swift */; };
 		0DFA1BF12ABE2587003994A7 /* FrameworkGridViewSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA1BF02ABE2587003994A7 /* FrameworkGridViewSecond.swift */; };
 		0DFA1BF32ABE2664003994A7 /* FrameworkDetailViewSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA1BF22ABE2664003994A7 /* FrameworkDetailViewSecond.swift */; };
+		0DFA1BF52ABFAF8F003994A7 /* FrameworkGridViewThird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA1BF42ABFAF8F003994A7 /* FrameworkGridViewThird.swift */; };
+		0DFA1BF72ABFB013003994A7 /* FrameworkGridViewModelThird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA1BF62ABFB013003994A7 /* FrameworkGridViewModelThird.swift */; };
+		0DFA1BF92ABFB0AD003994A7 /* FrameworkDetailViewThird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA1BF82ABFB0AD003994A7 /* FrameworkDetailViewThird.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		0DFA1BEE2ABE253B003994A7 /* FrameworkTitleViewSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkTitleViewSecond.swift; sourceTree = "<group>"; };
 		0DFA1BF02ABE2587003994A7 /* FrameworkGridViewSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkGridViewSecond.swift; sourceTree = "<group>"; };
 		0DFA1BF22ABE2664003994A7 /* FrameworkDetailViewSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkDetailViewSecond.swift; sourceTree = "<group>"; };
+		0DFA1BF42ABFAF8F003994A7 /* FrameworkGridViewThird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkGridViewThird.swift; sourceTree = "<group>"; };
+		0DFA1BF62ABFB013003994A7 /* FrameworkGridViewModelThird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkGridViewModelThird.swift; sourceTree = "<group>"; };
+		0DFA1BF82ABFB0AD003994A7 /* FrameworkDetailViewThird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkDetailViewThird.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,8 @@
 				0DFA1BD42ABE182A003994A7 /* FrameworkGridViewModel.swift */,
 				0DFA1BCE2ABD9F90003994A7 /* FrameworkGridView.swift */,
 				0DFA1BF02ABE2587003994A7 /* FrameworkGridViewSecond.swift */,
+				0DFA1BF42ABFAF8F003994A7 /* FrameworkGridViewThird.swift */,
+				0DFA1BF62ABFB013003994A7 /* FrameworkGridViewModelThird.swift */,
 			);
 			name = FrameworkGridView;
 			sourceTree = "<group>";
@@ -116,6 +124,7 @@
 			children = (
 				0DFA1BD02ABE13DD003994A7 /* FrameworkDetailView.swift */,
 				0DFA1BF22ABE2664003994A7 /* FrameworkDetailViewSecond.swift */,
+				0DFA1BF82ABFB0AD003994A7 /* FrameworkDetailViewThird.swift */,
 			);
 			name = FrameworkDetailView;
 			sourceTree = "<group>";
@@ -236,8 +245,11 @@
 				0DFA1BEF2ABE253B003994A7 /* FrameworkTitleViewSecond.swift in Sources */,
 				0DFA1BD12ABE13DD003994A7 /* FrameworkDetailView.swift in Sources */,
 				0DFA1BCF2ABD9F90003994A7 /* FrameworkGridView.swift in Sources */,
+				0DFA1BF72ABFB013003994A7 /* FrameworkGridViewModelThird.swift in Sources */,
 				0DFA1BDB2ABE20C1003994A7 /* XDismissButton.swift in Sources */,
 				0DFA1BCD2ABD95EB003994A7 /* Framework.swift in Sources */,
+				0DFA1BF92ABFB0AD003994A7 /* FrameworkDetailViewThird.swift in Sources */,
+				0DFA1BF52ABFAF8F003994A7 /* FrameworkGridViewThird.swift in Sources */,
 				0DFA1BD32ABE1572003994A7 /* AFButton.swift in Sources */,
 				0DFA1BF32ABE2664003994A7 /* FrameworkDetailViewSecond.swift in Sources */,
 				0DFA1BF12ABE2587003994A7 /* FrameworkGridViewSecond.swift in Sources */,

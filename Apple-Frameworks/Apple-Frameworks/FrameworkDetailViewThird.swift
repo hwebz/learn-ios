@@ -1,15 +1,14 @@
 //
-//  FrameworkDetailViewSecond.swift
+//  FrameworkDetailViewThird.swift
 //  Apple-Frameworks
 //
-//  Created by Personal on 23/09/2023.
+//  Created by Personal on 24/09/2023.
 //
 
 import SwiftUI
 
-struct FrameworkDetailViewSecond: View {
+struct FrameworkDetailViewThird: View {
     var framework: Framework
-    @Binding var isShowingDetailView: Bool
     @State private var isShowingSafariView = false
     
     var body: some View {
@@ -23,24 +22,20 @@ struct FrameworkDetailViewSecond: View {
             Button {
                 isShowingSafariView = true
             } label: {
-//                AFButton(title: "Learn More")
                 Label("Learn More", systemImage: "book.fill")
             }
             .buttonStyle(.bordered)
             .controlSize(.large)
-//            .foregroundColor(.yellow)
-//            .buttonBorderShape(.roundedRectangle(radius: 20))
             .tint(.red)
         }
-//        .fullScreenCover(isPresented: $isShowingSafariView, content: {
         .sheet(isPresented: $isShowingSafariView, content: {
             SafariView(url: URL(string: framework.urlString) ?? URL(string: "www.apple.com")!)
         })
     }
 }
 
-struct FrameworkDetailViewSecond_Previews: PreviewProvider {
+struct FrameworkDetailViewThird_Previews: PreviewProvider {
     static var previews: some View {
-        FrameworkDetailViewSecond(framework: MockData.sampleFramework, isShowingDetailView: .constant(false))
+        FrameworkDetailViewThird(framework: MockData.sampleFramework)
     }
 }
