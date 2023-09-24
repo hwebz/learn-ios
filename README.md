@@ -30,3 +30,11 @@
     <img src="./screenshots/3.grid.png" width="200" />
     <img src="./screenshots/3.detail.png" width="200" />
 </div>
+
+### Barcode Scanner App
+> /SwiftUI-Weather
+
+#### Screenshots
+<div style="display: flex;flex-wrap: wrap;">
+    <img src="./screenshots/barcode.jpeg" width="200" />
+</div>
