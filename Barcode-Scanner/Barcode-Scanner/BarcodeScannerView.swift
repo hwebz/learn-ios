@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct BarcodeScannerView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Rectangle()
+                ScannerView()
                     .frame(maxWidth: .infinity, maxHeight: 300)
                 Spacer().frame(height: 80)
                 Label("Scanned Barcode:", systemImage: "barcode.viewfinder")
@@ -27,8 +27,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct BarcodeScannerView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        BarcodeScannerView()
     }
 }
