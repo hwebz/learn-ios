@@ -18,6 +18,7 @@
 		0D954CE52AC580F20095F7BD /* AppetizerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D954CE42AC580F20095F7BD /* AppetizerListCell.swift */; };
 		0D954CE72AC581A30095F7BD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D954CE62AC581A30095F7BD /* NetworkManager.swift */; };
 		0D954CE92AC5828C0095F7BD /* APError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D954CE82AC5828C0095F7BD /* APError.swift */; };
+		0D954CEC2AC588F40095F7BD /* AppetizerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D954CEB2AC588F40095F7BD /* AppetizerListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		0D954CE62AC581A30095F7BD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0D954CE82AC5828C0095F7BD /* APError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APError.swift; sourceTree = "<group>"; };
 		0D954CEA2AC587FF0095F7BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0D954CEB2AC588F40095F7BD /* AppetizerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				0D954CE42AC580F20095F7BD /* AppetizerListCell.swift */,
 				0D954CE62AC581A30095F7BD /* NetworkManager.swift */,
 				0D954CE82AC5828C0095F7BD /* APError.swift */,
+				0D954CEB2AC588F40095F7BD /* AppetizerListViewModel.swift */,
 			);
 			path = Appetizers;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				0D954CE32AC57C500095F7BD /* Appetizer.swift in Sources */,
 				0D954CE92AC5828C0095F7BD /* APError.swift in Sources */,
 				0D954CE52AC580F20095F7BD /* AppetizerListCell.swift in Sources */,
+				0D954CEC2AC588F40095F7BD /* AppetizerListViewModel.swift in Sources */,
 				0D954CCE2AC008CB0095F7BD /* AppetizerTabView.swift in Sources */,
 				0D954CCC2AC008CB0095F7BD /* AppetizersApp.swift in Sources */,
 				0D954CE72AC581A30095F7BD /* NetworkManager.swift in Sources */,
