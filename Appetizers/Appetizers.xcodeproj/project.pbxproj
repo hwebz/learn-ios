@@ -28,6 +28,7 @@
 		0D954D082AC5F0170095F7BD /* XDimissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D954D072AC5F0170095F7BD /* XDimissButton.swift */; };
 		0D954D0A2AC5F85A0095F7BD /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D954D092AC5F85A0095F7BD /* AccountViewModel.swift */; };
 		0D954D0C2AC5F9950095F7BD /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D954D0B2AC5F9950095F7BD /* String+Ext.swift */; };
+		0D954D0E2AC5FE580095F7BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D954D0D2AC5FE580095F7BD /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		0D954D072AC5F0170095F7BD /* XDimissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDimissButton.swift; sourceTree = "<group>"; };
 		0D954D092AC5F85A0095F7BD /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		0D954D0B2AC5F9950095F7BD /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		0D954D0D2AC5FE580095F7BD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				0D954CE22AC57C500095F7BD /* Appetizer.swift */,
+				0D954D0D2AC5FE580095F7BD /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				0D954CF22AC5D6E20095F7BD /* Color+Ext.swift in Sources */,
 				0D954CCE2AC008CB0095F7BD /* AppetizerTabView.swift in Sources */,
 				0D954D062AC5EF8E0095F7BD /* APButton.swift in Sources */,
+				0D954D0E2AC5FE580095F7BD /* User.swift in Sources */,
 				0D954CF02AC5D6500095F7BD /* LoadingView.swift in Sources */,
 				0D954CCC2AC008CB0095F7BD /* AppetizersApp.swift in Sources */,
 				0D954CE72AC581A30095F7BD /* NetworkManager.swift in Sources */,
