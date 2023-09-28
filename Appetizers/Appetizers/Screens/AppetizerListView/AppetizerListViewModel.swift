@@ -11,6 +11,8 @@ final class AppetizerListViewModel: ObservableObject {
     @Published var appetizers: [Appetizer] = []
     @Published var alertItem: AlertItem?
     @Published var isLoading: Bool = false
+    @Published var isShowingDetail = false
+    @Published var selectedAppetizer: Appetizer?
     
     // Enable App Transport Security Settings / Allow Arbitrary Loads = true to call API from unknown domain
     func getAppetizers() {
