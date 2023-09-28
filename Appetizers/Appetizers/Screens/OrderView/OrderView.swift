@@ -10,8 +10,22 @@ import SwiftUI
 struct OrderView: View {
     var body: some View {
         NavigationView {
-            Text("Appetizer Order View")
-                .navigationTitle("🧾 Orders")
+            VStack {
+                List {
+                    ForEach(MockData.orderItems) { orderItem in
+                        AppetizerListCell(appetizer: orderItem)
+                    }
+                }
+                .listStyle(PlainListStyle())
+                
+                Button {
+                    print("order placed")
+                } label: {
+                    APButton(title: "$99.99 - Place Order")
+                }
+                .padding(.bottom, 25)
+            }
+            .navigationTitle("🧾 Orders")
         }
     }
 }
