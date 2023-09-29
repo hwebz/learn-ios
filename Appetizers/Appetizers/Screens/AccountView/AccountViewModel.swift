@@ -6,6 +6,13 @@
 //
 
 import SwiftUI
+// RxSwift
+//import Observable
+//
+//@Observable class AccountViewModel {
+//    var user: User = User()
+//    var alertItem: AlertItem? = nil
+//}
 
 final class AccountViewModel: ObservableObject {
     @AppStorage("user") private var userData: Data?
