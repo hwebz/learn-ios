@@ -31,6 +31,7 @@
 		0D954D0E2AC5FE580095F7BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D954D0D2AC5FE580095F7BD /* User.swift */; };
 		0DE12D102AC6680900367A73 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE12D0F2AC6680900367A73 /* EmptyState.swift */; };
 		0DE12D122AC66D9300367A73 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE12D112AC66D9300367A73 /* Order.swift */; };
+		0DE12D142AC6774000367A73 /* CustomModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE12D132AC6774000367A73 /* CustomModifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		0D954D0D2AC5FE580095F7BD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0DE12D0F2AC6680900367A73 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
 		0DE12D112AC66D9300367A73 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		0DE12D132AC6774000367A73 /* CustomModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 				0D954D012AC5DEDD0095F7BD /* Cells */,
 				0D954D002AC5DED80095F7BD /* Image */,
 				0D954CFF2AC5DED20095F7BD /* UIKit Components */,
+				0DE12D132AC6774000367A73 /* CustomModifiers.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				0D954D032AC5E00C0095F7BD /* AppetizerDetailView.swift in Sources */,
 				0D954CDB2AC009100095F7BD /* AppetizerListView.swift in Sources */,
 				0D954CEE2AC58A300095F7BD /* Alert.swift in Sources */,
+				0DE12D142AC6774000367A73 /* CustomModifiers.swift in Sources */,
 				0D954CE12AC0092B0095F7BD /* OrderView.swift in Sources */,
 				0D954CDF2AC009230095F7BD /* AccountView.swift in Sources */,
 			);

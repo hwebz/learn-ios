@@ -21,4 +21,8 @@ final class Order: ObservableObject {
     var totalPrice: Double {
         items.reduce(0) { $0 + $1.price }
     }
+    
+    var totalItems: Int {
+        items.count
+    }
 }
