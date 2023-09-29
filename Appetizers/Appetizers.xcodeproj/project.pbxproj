@@ -29,6 +29,7 @@
 		0D954D0A2AC5F85A0095F7BD /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D954D092AC5F85A0095F7BD /* AccountViewModel.swift */; };
 		0D954D0C2AC5F9950095F7BD /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D954D0B2AC5F9950095F7BD /* String+Ext.swift */; };
 		0D954D0E2AC5FE580095F7BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D954D0D2AC5FE580095F7BD /* User.swift */; };
+		0DE12D102AC6680900367A73 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE12D0F2AC6680900367A73 /* EmptyState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		0D954D092AC5F85A0095F7BD /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		0D954D0B2AC5F9950095F7BD /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		0D954D0D2AC5FE580095F7BD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0DE12D0F2AC6680900367A73 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +97,6 @@
 				0D954CF52AC5DE150095F7BD /* Screens */,
 				0D954CEA2AC587FF0095F7BD /* Info.plist */,
 				0D954CCB2AC008CB0095F7BD /* AppetizersApp.swift */,
-				0D954CCD2AC008CB0095F7BD /* AppetizerTabView.swift */,
 				0D954CCF2AC008CC0095F7BD /* Assets.xcassets */,
 				0D954CD12AC008CC0095F7BD /* Appetizers.entitlements */,
 				0D954CD22AC008CC0095F7BD /* Preview Content */,
@@ -114,6 +115,7 @@
 		0D954CF52AC5DE150095F7BD /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0D954CCD2AC008CB0095F7BD /* AppetizerTabView.swift */,
 				0D954CF72AC5DE260095F7BD /* AccountView */,
 				0D954CF62AC5DE1D0095F7BD /* AppetizerListView */,
 				0D954CF82AC5DE2E0095F7BD /* OrderView */,
@@ -196,6 +198,7 @@
 		0D954CFE2AC5DEC50095F7BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0DE12D0E2AC667F900367A73 /* Empty States */,
 				0D954D042AC5EF830095F7BD /* Buttons */,
 				0D954D012AC5DEDD0095F7BD /* Cells */,
 				0D954D002AC5DED80095F7BD /* Image */,
@@ -235,6 +238,14 @@
 				0D954D072AC5F0170095F7BD /* XDimissButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		0DE12D0E2AC667F900367A73 /* Empty States */ = {
+			isa = PBXGroup;
+			children = (
+				0DE12D0F2AC6680900367A73 /* EmptyState.swift */,
+			);
+			path = "Empty States";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +333,7 @@
 				0D954D082AC5F0170095F7BD /* XDimissButton.swift in Sources */,
 				0D954CF42AC5DB590095F7BD /* RemoteImage.swift in Sources */,
 				0D954D0C2AC5F9950095F7BD /* String+Ext.swift in Sources */,
+				0DE12D102AC6680900367A73 /* EmptyState.swift in Sources */,
 				0D954D032AC5E00C0095F7BD /* AppetizerDetailView.swift in Sources */,
 				0D954CDB2AC009100095F7BD /* AppetizerListView.swift in Sources */,
 				0D954CEE2AC58A300095F7BD /* Alert.swift in Sources */,
