@@ -9,32 +9,36 @@ import SwiftUI
 
 struct OrderView: View {
     
-    @State private var orderItems = MockData.orderItems
+    @EnvironmentObject var order: Order
+    
+//    @State private var orderItems = MockData.orderItems
     
     var body: some View {
         NavigationView {
             ZStack {
                 VStack {
                     List {
-                        ForEach(orderItems) { orderItem in
+                        ForEach(order.items) { orderItem in
                             AppetizerListCell(appetizer: orderItem)
                         }
     //                    .onDelete(perform: { indexSet in
     //                        orderItems.remove(atOffsets: indexSet)
     //                    })
-                        .onDelete(perform: deleteItems)
+//                        .onDelete(perform: deleteItems)
+                        .onDelete(perform: order.remove)
                     }
                     .listStyle(PlainListStyle())
                     
                     Button {
                         print("order placed")
                     } label: {
-                        APButton(title: "$99.99 - Place Order")
+                        APButton(title: "$\(order.totalPrice, specifier: "%.2f") - Place Order")
                     }
                     .padding(.bottom, 25)
                 }
                 
-                if orderItems.isEmpty {
+//                if orderItems.isEmpty {
+                if order.items.isEmpty {
                     EmptyState(imageName: "empty-order", message: "You have no items in your order. Please add an appetizer!")
                 }
             }
@@ -42,9 +46,9 @@ struct OrderView: View {
         }
     }
     
-    func deleteItems(at offsets: IndexSet) {
-        orderItems.remove(atOffsets: offsets)
-    }
+//    func deleteItems(at offsets: IndexSet) {
+//        orderItems.remove(atOffsets: offsets)
+//    }
 }
 
 struct OrderView_Previews: PreviewProvider {
