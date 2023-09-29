@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// Cmd + Shift + A: Toggle light/dark mode on simulator
+/// Cmd + K: Toggle keyboard on simulator
+/// Control + I: Format selection code
+
 @main
 struct AppetizersApp: App {
     
