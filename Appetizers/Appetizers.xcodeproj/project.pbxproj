@@ -32,6 +32,7 @@
 		0DE12D102AC6680900367A73 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE12D0F2AC6680900367A73 /* EmptyState.swift */; };
 		0DE12D122AC66D9300367A73 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE12D112AC66D9300367A73 /* Order.swift */; };
 		0DE12D142AC6774000367A73 /* CustomModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE12D132AC6774000367A73 /* CustomModifiers.swift */; };
+		0DE12D182AC690DD00367A73 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE12D172AC690DD00367A73 /* Date+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		0DE12D0F2AC6680900367A73 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
 		0DE12D112AC66D9300367A73 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		0DE12D132AC6774000367A73 /* CustomModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifiers.swift; sourceTree = "<group>"; };
+		0DE12D172AC690DD00367A73 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			children = (
 				0D954CF12AC5D6E20095F7BD /* Color+Ext.swift */,
 				0D954D0B2AC5F9950095F7BD /* String+Ext.swift */,
+				0DE12D172AC690DD00367A73 /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				0D954CE32AC57C500095F7BD /* Appetizer.swift in Sources */,
 				0D954CE92AC5828C0095F7BD /* APError.swift in Sources */,
 				0D954CE52AC580F20095F7BD /* AppetizerListCell.swift in Sources */,
+				0DE12D182AC690DD00367A73 /* Date+Ext.swift in Sources */,
 				0D954CEC2AC588F40095F7BD /* AppetizerListViewModel.swift in Sources */,
 				0DE12D122AC66D9300367A73 /* Order.swift in Sources */,
 				0D954D0A2AC5F85A0095F7BD /* AccountViewModel.swift in Sources */,

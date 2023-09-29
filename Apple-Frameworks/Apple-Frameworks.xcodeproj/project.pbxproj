@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DE12D162AC68A2A00367A73 /* FrameworkDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE12D152AC68A2A00367A73 /* FrameworkDetailViewModel.swift */; };
 		0DFA1BBE2ABD954D003994A7 /* Apple_FrameworksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFA1BBD2ABD954D003994A7 /* Apple_FrameworksApp.swift */; };
 		0DFA1BC22ABD954D003994A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DFA1BC12ABD954D003994A7 /* Assets.xcassets */; };
 		0DFA1BC62ABD954D003994A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DFA1BC52ABD954D003994A7 /* Preview Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DE12D152AC68A2A00367A73 /* FrameworkDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkDetailViewModel.swift; sourceTree = "<group>"; };
 		0DFA1BBA2ABD954D003994A7 /* Apple-Frameworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple-Frameworks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DFA1BBD2ABD954D003994A7 /* Apple_FrameworksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple_FrameworksApp.swift; sourceTree = "<group>"; };
 		0DFA1BC12ABD954D003994A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				0DFA1BD02ABE13DD003994A7 /* FrameworkDetailView.swift */,
 				0DFA1BF22ABE2664003994A7 /* FrameworkDetailViewSecond.swift */,
 				0DFA1BF82ABFB0AD003994A7 /* FrameworkDetailViewThird.swift */,
+				0DE12D152AC68A2A00367A73 /* FrameworkDetailViewModel.swift */,
 			);
 			name = FrameworkDetailView;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				0DFA1BF72ABFB013003994A7 /* FrameworkGridViewModelThird.swift in Sources */,
 				0DFA1BDB2ABE20C1003994A7 /* XDismissButton.swift in Sources */,
 				0DFA1BCD2ABD95EB003994A7 /* Framework.swift in Sources */,
+				0DE12D162AC68A2A00367A73 /* FrameworkDetailViewModel.swift in Sources */,
 				0DFA1BF92ABFB0AD003994A7 /* FrameworkDetailViewThird.swift in Sources */,
 				0DFA1BF52ABFAF8F003994A7 /* FrameworkGridViewThird.swift in Sources */,
 				0DFA1BD32ABE1572003994A7 /* AFButton.swift in Sources */,
