@@ -38,3 +38,15 @@
 <div style="display: flex;flex-wrap: wrap;">
     <img src="./screenshots/barcode.jpeg" width="200" />
 </div>
+
+### Appetizers
+> /Appetizers
+
+#### Screenshots
+<div style="display: flex;flex-wrap: wrap;">
+    <img src="./screenshots/appetizer-home.png" width="200" />
+    <img src="./screenshots/appetizer-detail.png" width="200" />
+    <img src="./screenshots/appetizer-account.png" width="200" />
+    <img src="./screenshots/appetizer-order-empty.png" width="200" />
+    <img src="./screenshots/appetizer-order.png" width="200" />
+</div>
