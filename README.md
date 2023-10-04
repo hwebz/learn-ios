@@ -70,3 +70,11 @@
     <img src="./screenshots/photo-gallery-4.png" height="200" />
     <img src="./screenshots/photo-gallery-2.png" height="200" />
 </div>
+
+### App Store (Mac)
+> /AppStore
+
+#### Screenshots
+<div style="display: flex;flex-wrap: wrap;">
+    <img src="./screenshots/appstore.png" height="300" />
+</div>
