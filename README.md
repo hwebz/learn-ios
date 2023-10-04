@@ -50,3 +50,12 @@
     <img src="./screenshots/appetizer-order-empty.png" width="200" />
     <img src="./screenshots/appetizer-order.png" width="200" />
 </div>
+
+### Tax Calculator
+> /TaxCalculator
+
+#### Screenshots
+<div style="display: flex;flex-wrap: wrap;">
+    <img src="./screenshots/tax-calculator.png" width="200" />
+    <img src="./screenshots/tax-calculator-2.png" width="200" />
+</div>
