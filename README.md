@@ -59,3 +59,14 @@
     <img src="./screenshots/tax-calculator.png" width="200" />
     <img src="./screenshots/tax-calculator-2.png" width="200" />
 </div>
+
+### Photo Gallery (Responsive)
+> /PhotoGallery
+
+#### Screenshots
+<div style="display: flex;flex-wrap: wrap;">
+    <img src="./screenshots/photo-gallery-1.png" width="200" />
+    <img src="./screenshots/photo-gallery-3.png" width="200" />
+    <img src="./screenshots/photo-gallery-4.png" height="200" />
+    <img src="./screenshots/photo-gallery-2.png" height="200" />
+</div>

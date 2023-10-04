@@ -61,17 +61,17 @@ struct FrontView: View {
                 .pickerStyle(SegmentedPickerStyle())
                 .padding(.bottom, 75)
                 
-//                Button {
-//
-//                } label: {
-//                    Text("Calculate Tax")
-//                }
-//                .buttonStyle(.borderedProminent)
+                Button {
+                    
+                } label: {
+                    Text("Calculate Tax")
+                }
+                .buttonStyle(.borderedProminent)
                 
                 NavigationLink(isActive: $isSalaryValid) {
 //                    ResultsView(salary: $salary)
 //                    AnotherResultsView(salary: salary, taxOption: selectedTaxOption, geography: selectedGeography)
-                    SecondResultsView(salary: $salary, taxOption: selectedTaxOption, geography: selectedGeography)
+                    SecondResultsView(salary: salary, taxOption: selectedTaxOption, geography: selectedGeography)
                 } label: {
                     Text("Calculate Tax")
                         .bold()
