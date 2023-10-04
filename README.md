@@ -78,3 +78,13 @@
 <div style="display: flex;flex-wrap: wrap;">
     <img src="./screenshots/appstore.png" height="300" />
 </div>
+
+### Fitness Companion (Apple Watch)
+> /FitnessCompanion
+
+#### Screenshots
+<div style="display: flex;flex-wrap: wrap;">
+    <img src="./screenshots/fitness-1.png" width="200" />
+    <img src="./screenshots/fitness-2.png" width="200" />
+    <img src="./screenshots/fitness-3.png" width="200" />
+</div>
