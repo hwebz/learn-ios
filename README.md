@@ -96,3 +96,16 @@
 <div style="display: flex;flex-wrap: wrap;">
     <img src="./screenshots/money-app.png" width="200" />
 </div>
+
+### Snacks Shop
+> /SnacksShop
+
+#### Screenshots
+<div style="display: flex;flex-wrap: wrap;">
+    <img src="./screenshots/snack-shop.png" width="200" />
+    <img src="./screenshots/snack-shop-2.png" width="200" />
+    <img src="./screenshots/snack-shop-3.png" width="200" />
+    <img src="./screenshots/snack-shop-4.png" width="200" />
+    <img src="./screenshots/snack-shop-5.png" width="200" />
+    <img src="./screenshots/snack-shop-6.png" width="200" />
+</div>
