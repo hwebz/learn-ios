@@ -109,3 +109,11 @@
     <img src="./screenshots/snack-shop-5.png" width="200" />
     <img src="./screenshots/snack-shop-6.png" width="200" />
 </div>
+
+### Parallax Carousel
+> /ParallaxCarousel
+
+#### Screenshots
+<div style="display: flex;flex-wrap: wrap;">
+    <img src="./screenshots/parallax-scroll.png" width="200" />
+</div>
