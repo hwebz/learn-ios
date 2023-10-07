@@ -50,6 +50,7 @@ struct NewsAPI {
         url += "apiKey=\(apiKey)"
         url += "&language=en"
         url += "&category=\(category.rawValue)"
+        print("URL: ", url)
         
         return URL(string: url)!
     }

@@ -15,11 +15,11 @@ struct Article {
     let title: String
     let url: String
     let publishedAt: Date
-    let content: String
     
     let author: String?
     let description: String?
     let urlToImage: String?
+    let content: String?
     
     var authorTeext: String {
         author ?? ""
@@ -35,6 +35,10 @@ struct Article {
     
     var articleURL: URL {
         URL(string: url)!
+    }
+    
+    var contentText: String {
+        content ?? ""
     }
     
     var imageURL: URL? {
