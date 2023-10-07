@@ -32,7 +32,11 @@ struct ArticleListView: View {
 }
 
 struct ArticleListView_Previews: PreviewProvider {
+    
+    @StateObject static var articleBookmarkVM = ArticleBookmarkViewModel.shared
+    
     static var previews: some View {
         ArticleListView(articles: Article.previewData!)
+            .environmentObject(articleBookmarkVM)
     }
 }

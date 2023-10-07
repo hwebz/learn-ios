@@ -55,17 +55,18 @@ class ArticleNewsViewModel: ObservableObject {
 //        }
 //    }
     func loadArticles() async {
-        if Task.isCancelled { return }
-        phase = .empty
-        do {
-//            let articles = try await newsAPI.fetch(from: selectedCategory)
-            let articles = try await newsAPI.fetch(from: fetchTaskToken.category)
-            if Task.isCancelled { return }
-            phase = .success(articles)
-        } catch {
-            if Task.isCancelled { return }
-            print(error)
-            phase = .failure(error)
-        }
+        phase = .success(Article.previewData!)
+//        if Task.isCancelled { return }
+//        phase = .empty
+//        do {
+////            let articles = try await newsAPI.fetch(from: selectedCategory)
+//            let articles = try await newsAPI.fetch(from: fetchTaskToken.category)
+//            if Task.isCancelled { return }
+//            phase = .success(articles)
+//        } catch {
+//            if Task.isCancelled { return }
+//            print(error)
+//            phase = .failure(error)
+//        }
     }
 }
