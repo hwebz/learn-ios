@@ -117,3 +117,15 @@
 <div style="display: flex;flex-wrap: wrap;">
     <img src="./screenshots/parallax-scroll.png" width="200" />
 </div>
+
+### Simple News (newsapi.org API)
+> /SimpleNews
+
+#### Screenshots
+<div style="display: flex;flex-wrap: wrap;">
+    <img src="./screenshots/simple-news.png" width="200" />
+    <img src="./screenshots/simple-news-1.png" width="200" />
+    <img src="./screenshots/simple-news-2.png" width="200" />
+    <img src="./screenshots/simple-news-3.png" width="200" />
+    <img src="./screenshots/simple-news-4.png" width="200" />
+</div>
