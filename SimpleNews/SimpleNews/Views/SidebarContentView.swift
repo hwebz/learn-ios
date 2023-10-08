@@ -9,13 +9,25 @@ import SwiftUI
 
 struct SidebarContentView: View {
     
-    @State var selectedMenuItemId: MenuItem.ID? = MenuItem.category(.general).id
+    @AppStorage("item_selection") var selectedMenuItemId: MenuItem.ID?
+    private var selection: Binding<MenuItem.ID?> {
+        Binding {
+            selectedMenuItemId ?? MenuItem.category(.general).id
+        } set: { newValue in
+            if let menuItemId = newValue {
+                selectedMenuItemId = menuItemId
+            }
+        }
+    }
     
     var body: some View {
         NavigationView {
-            List(selection: $selectedMenuItemId) {
-                ForEach([MenuItem.saved, MenuItem.search]) {
-                    navigationLinkForMenu($0)
+            List(selection: selection) {
+                ForEach([MenuItem.saved, MenuItem.search]) { item in
+                    navigationLinkForMenu(item)
+                        .onTapGesture {
+                            self.selection.wrappedValue = item.id
+                        }
                 }
                 
                 Section {
@@ -32,7 +44,7 @@ struct SidebarContentView: View {
     }
     
     private func navigationLinkForMenu(_ item: MenuItem) -> some View {
-        NavigationLink(destination: viewForMenuItem(item: item), tag: item.id, selection: $selectedMenuItemId) {
+        NavigationLink(destination: viewForMenuItem(item: item), tag: item.id, selection: selection) {
             Label(item.text, systemImage: item.systemImage)
         }
     }
@@ -46,7 +58,7 @@ struct SidebarContentView: View {
                 BoookMarkTabView()
             case .category(let category):
                 NewsTabView(category: category)
-                // NOTE: If we change selectedMenuItemId manually, the detail view can't be rendered becasue it not detected the change
+                // NOTE: If we change selection manually, the detail view can't be rendered becasue it not detected the change
                 // you need to define id for view here for it to realize what changes need to re-render List item selection
                     .id(category.id)
         }
