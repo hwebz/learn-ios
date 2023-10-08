@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchTabView: View {
     
-    @StateObject var searchVM = ArticleSearchViewModel()
+    @StateObject var searchVM = ArticleSearchViewModel.shared
     var shouldShowSuggestions: Bool {
         searchVM.searchQuery.isEmpty
     }
