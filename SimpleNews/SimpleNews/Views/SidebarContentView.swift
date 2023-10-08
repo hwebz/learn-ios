@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SidebarContentView: View {
     
-    @AppStorage("item_selection") var selectedMenuItemId: MenuItem.ID?
+    @Binding var selectedMenuItemId: MenuItem.ID?
     private var selection: Binding<MenuItem.ID?> {
         Binding {
             selectedMenuItemId ?? MenuItem.category(.general).id
@@ -67,6 +67,6 @@ struct SidebarContentView: View {
 
 struct SidebarContentView_Previews: PreviewProvider {
     static var previews: some View {
-        SidebarContentView()
+        SidebarContentView(selectedMenuItemId: .constant(nil))
     }
 }

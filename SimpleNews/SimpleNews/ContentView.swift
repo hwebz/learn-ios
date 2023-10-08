@@ -9,15 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @AppStorage("item_selection") var selectedMenuItemId: MenuItem.ID?
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     
     var body: some View {
         
         switch horizontalSizeClass {
             case .regular:
-                SidebarContentView()
+                SidebarContentView(selectedMenuItemId: $selectedMenuItemId)
             default:
-                TabContentView()
+                TabContentView(selectedMenuItemId: $selectedMenuItemId)
         }
     }
 }

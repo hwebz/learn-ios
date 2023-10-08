@@ -8,34 +8,75 @@
 import SwiftUI
 
 struct TabContentView: View {
+    @Binding var selectedMenuItemId: MenuItem.ID?
+    private var selection: Binding<TabMenuItem> {
+        Binding {
+            TabMenuItem(menuItem: selectedMenuItemId)
+        } set: { newValue in
+            selectedMenuItemId = newValue.menuItemId(category: selectedCategory ?? .general)
+        }
+    }
+    
+    private var selectedCategory: Category? {
+        let menuItem = MenuItem(id: selectedMenuItemId)
+        if case .category(let category) = menuItem {
+            return category
+        } else {
+            return nil
+        }
+    }
+    
     var body: some View {
-        TabView {
-            NavigationView {
-                NewsTabView()
-            }
-            .tabItem {
-                Label("News", systemImage: "newspaper")
+        TabView(selection: selection) {
+            
+            ForEach(TabMenuItem.allCases) { item in
+                NavigationView {
+                    viewForTabItem(item)
+                }
+                .tabItem {
+                    Label(item.text, systemImage: item.systemImage)
+                }
+                .tag(item)
             }
             
-            NavigationView {
-                SearchTabView()
-            }
-            .tabItem {
-                Label("Search", systemImage: "magnifyingglass")
-            }
-            
-            NavigationView {
+//            NavigationView {
+//                NewsTabView()
+//            }
+//            .tabItem {
+//                Label("News", systemImage: "newspaper")
+//            }
+//
+//            NavigationView {
+//                SearchTabView()
+//            }
+//            .tabItem {
+//                Label("Search", systemImage: "magnifyingglass")
+//            }
+//            
+//            NavigationView {
+//                BoookMarkTabView()
+//            }
+//            .tabItem {
+//                Label("Saved", systemImage: "bookmark")
+//            }
+        }
+    }
+    
+    @ViewBuilder
+    private func viewForTabItem(_ item: TabMenuItem) -> some View {
+        switch item {
+            case .news:
+                NewsTabView(category: selectedCategory ?? .general)
+            case .saved:
                 BoookMarkTabView()
-            }
-            .tabItem {
-                Label("Saved", systemImage: "bookmark")
-            }
+            case .search:
+                SearchTabView()
         }
     }
 }
 
 struct TabContentView_Previews: PreviewProvider {
     static var previews: some View {
-        TabContentView()
+        TabContentView(selectedMenuItemId: .constant(nil))
     }
 }

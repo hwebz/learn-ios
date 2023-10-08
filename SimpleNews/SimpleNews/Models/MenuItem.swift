@@ -50,6 +50,21 @@ extension MenuItem: Identifiable {
                 return category.rawValue
         }
     }
+    
+    init?(id: MenuItem.ID?) {
+        switch id {
+            case MenuItem.search.id:
+                self = .search
+            case MenuItem.saved.id:
+                self = .saved
+            default:
+                if let id = id, let category = Category(rawValue: id) {
+                    self = .category(category)
+                } else {
+                    return nil
+                }
+        }
+    }
 }
 
 extension Category {

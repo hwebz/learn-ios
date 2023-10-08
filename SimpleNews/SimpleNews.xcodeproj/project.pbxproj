@@ -32,6 +32,7 @@
 		0DD643EF2AD31ECB00F6BED6 /* TabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643EE2AD31ECB00F6BED6 /* TabContentView.swift */; };
 		0DD643F12AD31EEA00F6BED6 /* SidebarContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643F02AD31EEA00F6BED6 /* SidebarContentView.swift */; };
 		0DD643F32AD31F4D00F6BED6 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643F22AD31F4D00F6BED6 /* MenuItem.swift */; };
+		0DD643F52AD336AC00F6BED6 /* TabMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643F42AD336AC00F6BED6 /* TabMenuItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		0DD643EE2AD31ECB00F6BED6 /* TabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContentView.swift; sourceTree = "<group>"; };
 		0DD643F02AD31EEA00F6BED6 /* SidebarContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarContentView.swift; sourceTree = "<group>"; };
 		0DD643F22AD31F4D00F6BED6 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		0DD643F42AD336AC00F6BED6 /* TabMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMenuItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				0DD643D52AD1D7A400F6BED6 /* Category.swift */,
 				0DD643E42AD1EF3600F6BED6 /* DataStore.swift */,
 				0DD643F22AD31F4D00F6BED6 /* MenuItem.swift */,
+				0DD643F42AD336AC00F6BED6 /* TabMenuItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				0DD643D92AD1DA3C00F6BED6 /* ArticleNewsViewModel.swift in Sources */,
 				0DD643E12AD1E98B00F6BED6 /* ArticleBookmarkViewModel.swift in Sources */,
 				0DD643DB2AD1DDCA00F6BED6 /* NewsTabView.swift in Sources */,
+				0DD643F52AD336AC00F6BED6 /* TabMenuItem.swift in Sources */,
 				0D8465C82AD128B200E1A043 /* Article.swift in Sources */,
 				0DD643F32AD31F4D00F6BED6 /* MenuItem.swift in Sources */,
 				0DD643D12AD1D46E00F6BED6 /* SafariView.swift in Sources */,

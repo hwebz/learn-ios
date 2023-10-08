@@ -24,7 +24,16 @@ class ArticleNewsViewModel: ObservableObject {
     @Published var phase = DataFetchPhase<[Article]>.empty
     // fetchTaskToken replaced selectedCategory
 //    @Published var selectedCategory: Category
-    @Published var fetchTaskToken: FetchTaskToken
+//    @Published var fetchTaskToken: FetchTaskToken
+    // Set selected category from popup clicked to storage
+    @Published var fetchTaskToken: FetchTaskToken {
+        didSet {
+            if oldValue.category != fetchTaskToken.category {
+                selectedMenuItemId = MenuItem.category(fetchTaskToken.category).id
+            }
+        }
+    }
+    @AppStorage("item_selection") private var selectedMenuItemId: MenuItem.ID?
     
     private let newsAPI = NewsAPI.shared
     
