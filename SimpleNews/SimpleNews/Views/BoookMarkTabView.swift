@@ -15,13 +15,12 @@ struct BoookMarkTabView: View {
     var body: some View {
         let articles = self.articles
         
-        NavigationView {
-            ArticleListView(articles: articles)
-            .overlay(OverlayView(isEmpty: articles.isEmpty))
-            .navigationTitle("Saved Articles")
-        }
+        ArticleListView(articles: articles)
+        .overlay(OverlayView(isEmpty: articles.isEmpty))
+        .navigationTitle("Saved Articles")
         .searchable(text: $searchText)
     }
+    
     
     private var articles: [Article] {
         if (searchText.isEmpty) {

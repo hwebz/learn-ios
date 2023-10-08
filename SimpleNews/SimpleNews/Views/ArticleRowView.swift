@@ -9,10 +9,21 @@ import SwiftUI
 
 struct ArticleRowView: View {
     
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @EnvironmentObject var articleBookmarkVM: ArticleBookmarkViewModel
     
     let article: Article
     var body: some View {
+        switch horizontalSizeClass {
+            case .regular:
+                GeometryReader { contentView(proxy: $0) }
+            default:
+                contentView()
+        }
+    }
+    
+    @ViewBuilder
+    private func contentView(proxy: GeometryProxy? = nil) -> some View {
         VStack(alignment: .leading, spacing: 16) {
             /// Have to update Info -> Custom iOS Target Propperties
             /// To add "App Transport Security Settings" > "Allow Arbitrary Loads" = "YES"
@@ -25,7 +36,8 @@ struct ArticleRowView: View {
                             Spacer()
                         }
                     case .success(let image):
-                        image.resizable()
+                        image
+                            .resizable()
                             .aspectRatio(contentMode: .fill)
                     case .failure:
                         HStack {
@@ -37,8 +49,9 @@ struct ArticleRowView: View {
                         fatalError()
                 }
             }
-            .frame(minHeight: 200, maxHeight: 300)
-            .background(.gray.opacity(0.3))
+            .asyncImageFrame(horizontalSizeClass: horizontalSizeClass!)
+            .background(.gray.opacity(0.6))
+            .clipped()
             
             VStack(alignment: .leading, spacing: 8) {
                 Text(article.title)
@@ -48,6 +61,10 @@ struct ArticleRowView: View {
                 Text(article.descriptionText)
                     .font(.subheadline)
                     .lineLimit(2)
+                
+                if (horizontalSizeClass == .regular) {
+                    Spacer()
+                }
                 
                 HStack {
                     Text(article.captionText)
@@ -65,7 +82,7 @@ struct ArticleRowView: View {
                     .buttonStyle(.bordered)
                     
                     Button {
-                        presentShareSheet(url: article.articleURL)
+                        presentShareSheet(url: article.articleURL, proxy: proxy)
                     } label: {
                         Image(systemName: "square.and.arrow.up")
                     }
@@ -86,9 +103,31 @@ struct ArticleRowView: View {
 }
 
 extension View {
-    func presentShareSheet(url: URL) {
+    func presentShareSheet(url: URL, proxy: GeometryProxy? = nil) {
         let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-        (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.keyWindow?.rootViewController?.present(activityVC, animated: true)
+        guard let rootVC = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?
+            .keyWindow?
+            .rootViewController else {
+                return
+            }
+        
+        activityVC.popoverPresentationController?.sourceView = rootVC.view
+        if let proxy = proxy {
+            activityVC.popoverPresentationController?.sourceRect = proxy.frame(in: .global)
+        }
+        rootVC.present(activityVC, animated: true)
+    }
+}
+
+fileprivate extension View {
+    @ViewBuilder
+    func asyncImageFrame(horizontalSizeClass: UserInterfaceSizeClass) -> some View {
+        switch horizontalSizeClass {
+            case .regular:
+                frame(height: 180)
+            default:
+                frame(minHeight: 200, maxHeight: 300)
+        }
     }
 }
 

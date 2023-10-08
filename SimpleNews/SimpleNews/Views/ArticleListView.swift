@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct ArticleListView: View {
-    let articles: [Article]
     
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    let articles: [Article]
     @State private var selectedArticle: Article?
     
     var body: some View {
+        rootView
+        .sheet(item: $selectedArticle) {
+            SafariView(url: $0.articleURL)
+                .edgesIgnoringSafeArea(.bottom)
+        }
+    }
+    
+    var listView: some View {
         List {
             ForEach(articles) { article in
                 ArticleRowView(article: article)
@@ -24,9 +33,35 @@ struct ArticleListView: View {
             .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
-        .sheet(item: $selectedArticle) {
-            SafariView(url: $0.articleURL)
-                .edgesIgnoringSafeArea(.bottom)
+    }
+    
+    private var gridView: some View {
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 300), spacing: 8)]) {
+                ForEach(articles) { article in
+                    ArticleRowView(article: article)
+                        .frame(height: 360)
+                        .background(Color(uiColor: .systemBackground))
+                        .mask(RoundedRectangle(cornerRadius: 8))
+                        .shadow(radius: 4)
+                        .padding(.bottom)
+                        .onTapGesture {
+                            self.selectedArticle = article
+                        }
+                }
+            }
+            .padding()
+        }
+        .background(Color(uiColor: .secondarySystemGroupedBackground))
+    }
+    
+    @ViewBuilder
+    private var rootView: some View {
+        switch horizontalSizeClass {
+            case .regular:
+                gridView
+            default:
+                listView
         }
     }
 }

@@ -9,32 +9,47 @@ import SwiftUI
 
 struct NewsTabView: View {
     
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @StateObject var articleNewsVM = ArticleNewsViewModel()
     
-    var body: some View {
-        NavigationView {
-            ArticleListView(articles: articles)
-                .overlay(OverlayView)
-                // This one created, no need .onChange() anymore
-//                .task(id: articleNewsVM.selectedCategory, loadTask)
-            // Whenever fetchTaskToken.token (new timestamp) update, task gonna run and re-fetch articles
-                .task(id: articleNewsVM.fetchTaskToken, loadTask)
-//                .refreshable {
-//                    // Pull to refresh
+    // OLD CODE for iOS only
+//    var body: some View {
+//        NavigationView {
+//            ArticleListView(articles: articles)
+//                .overlay(OverlayView)
+//                // This one created, no need .onChange() anymore
+////                .task(id: articleNewsVM.selectedCategory, loadTask)
+//            // Whenever fetchTaskToken.token (new timestamp) update, task gonna run and re-fetch articles
+//                .task(id: articleNewsVM.fetchTaskToken, loadTask)
+////                .refreshable {
+////                    // Pull to refresh
+//////                    loadTask()
+////                }
+//                .refreshable(action: loadTask)
+//                .onAppear {
 ////                    loadTask()
 //                }
-                .refreshable(action: loadTask)
-                .onAppear {
-//                    loadTask()
-                }
-                // load articles again when category changed
-//                .onChange(of: articleNewsVM.selectedCategory) {_ in
-//                    loadTask()
-//                }
-//                .navigationTitle(articleNewsVM.selectedCategory.text)
-                .navigationTitle(articleNewsVM.fetchTaskToken.category.text)
-                .navigationBarItems(trailing: menu)
-        }
+//                // load articles again when category changed
+////                .onChange(of: articleNewsVM.selectedCategory) {_ in
+////                    loadTask()
+////                }
+////                .navigationTitle(articleNewsVM.selectedCategory.text)
+//                .navigationTitle(articleNewsVM.fetchTaskToken.category.text)
+//                .navigationBarItems(trailing: menu)
+//        }
+//    }
+    
+    init(articles: [Article]? = nil, category: Category = .general) {
+        self._articleNewsVM = StateObject(wrappedValue: ArticleNewsViewModel(articles: articles, selectedCategory: category))
+    }
+    
+    var body: some View {
+        ArticleListView(articles: articles)
+            .overlay(OverlayView)
+            .navigationTitle(articleNewsVM.fetchTaskToken.category.text)
+            .task(id: articleNewsVM.fetchTaskToken, loadTask)
+            .refreshable(action: loadTask)
+            .navigationBarItems(trailing: navigationBarItem)
     }
     
     @ViewBuilder
@@ -81,17 +96,26 @@ struct NewsTabView: View {
         await articleNewsVM.loadArticles()
     }
     
-    private var menu: some View {
-        Menu {
-//            Picker("Category", selection: $articleNewsVM.selectedCategory) {
-            Picker("Category", selection: $articleNewsVM.fetchTaskToken.category) {
-                ForEach(Category.allCases) {
-                    Text($0.text).tag($0)
+    @ViewBuilder
+    private var navigationBarItem: some View {
+        switch horizontalSizeClass {
+            case .regular:
+                Button(action: refreshTask) {
+                    Image(systemName: "arrow.clockwise")
+                        .imageScale(.large)
                 }
-            }
-        } label: {
-            Image(systemName: "fiberchannel")
-                .imageScale(.large)
+            default:
+                Menu {
+                    //            Picker("Category", selection: $articleNewsVM.selectedCategory) {
+                    Picker("Category", selection: $articleNewsVM.fetchTaskToken.category) {
+                        ForEach(Category.allCases) {
+                            Text($0.text).tag($0)
+                        }
+                    }
+                } label: {
+                    Image(systemName: "fiberchannel")
+                        .imageScale(.large)
+                }
         }
     }
 }
@@ -101,7 +125,7 @@ struct NewsTabView_Previews: PreviewProvider {
     @StateObject static var articleBookmarkVM = ArticleBookmarkViewModel.shared
     
     static var previews: some View {
-        NewsTabView(articleNewsVM: ArticleNewsViewModel(articles: Article.previewData!))
+        NewsTabView(articles: Article.previewData!)
             .environmentObject(articleBookmarkVM)
     }
 }
