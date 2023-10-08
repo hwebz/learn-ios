@@ -28,6 +28,7 @@
 		0DD643E52AD1EF3600F6BED6 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643E42AD1EF3600F6BED6 /* DataStore.swift */; };
 		0DD643E72AD1F6C300F6BED6 /* ArticleSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643E62AD1F6C300F6BED6 /* ArticleSearchViewModel.swift */; };
 		0DD643E92AD1F79600F6BED6 /* SearchTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643E82AD1F79600F6BED6 /* SearchTabView.swift */; };
+		0DD643EB2AD28E9200F6BED6 /* SearchHistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643EA2AD28E9200F6BED6 /* SearchHistoryListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		0DD643E42AD1EF3600F6BED6 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		0DD643E62AD1F6C300F6BED6 /* ArticleSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleSearchViewModel.swift; sourceTree = "<group>"; };
 		0DD643E82AD1F79600F6BED6 /* SearchTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabView.swift; sourceTree = "<group>"; };
+		0DD643EA2AD28E9200F6BED6 /* SearchHistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				0DD643DE2AD1E0FA00F6BED6 /* RetryView.swift */,
 				0DD643E22AD1ED9F00F6BED6 /* BoookMarkTabView.swift */,
 				0DD643E82AD1F79600F6BED6 /* SearchTabView.swift */,
+				0DD643EA2AD28E9200F6BED6 /* SearchHistoryListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				0DD643CF2AD1D37D00F6BED6 /* ArticleListView.swift in Sources */,
 				0DD643DD2AD1E09C00F6BED6 /* EmptyPlaceholderView.swift in Sources */,
 				0D8465CD2AD1CA3200E1A043 /* ArticleRowView.swift in Sources */,
+				0DD643EB2AD28E9200F6BED6 /* SearchHistoryListView.swift in Sources */,
 				0DD643DF2AD1E0FA00F6BED6 /* RetryView.swift in Sources */,
 				0D8465B82AD1283700E1A043 /* SimpleNewsApp.swift in Sources */,
 				0D8465CA2AD12D5800E1A043 /* NewsAPIResponse.swift in Sources */,

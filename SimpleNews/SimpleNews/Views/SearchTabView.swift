@@ -44,6 +44,10 @@ struct SearchTabView: View {
             case .empty:
                 if !searchVM.searchQuery.isEmpty {
                     ProgressView()
+                } else if !searchVM.history.isEmpty {
+                    SearchHistoryListView(searchVM: searchVM) { historySearchQuery in
+                        searchVM.searchQuery = historySearchQuery
+                    }
                 } else {
                     EmptyPlaceholderView(text: "Type your query to search from NewsAPI", image: Image(systemName: "magnifyingglass"))
                 }
