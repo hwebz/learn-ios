@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SearchTabView: View {
-    
     @StateObject var searchVM = ArticleSearchViewModel.shared
     var shouldShowSuggestions: Bool {
         searchVM.searchQuery.isEmpty
@@ -47,6 +46,7 @@ struct SearchTabView: View {
                 } else if !searchVM.history.isEmpty {
                     SearchHistoryListView(searchVM: searchVM) { historySearchQuery in
                         searchVM.searchQuery = historySearchQuery
+                        search()
                     }
                 } else {
                     EmptyPlaceholderView(text: "Type your query to search from NewsAPI", image: Image(systemName: "magnifyingglass"))
