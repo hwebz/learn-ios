@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D2C20442AD46A3000D54E9F /* SimpleNewsMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C20432AD46A3000D54E9F /* SimpleNewsMacApp.swift */; };
+		0D2C20462AD46A3000D54E9F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2C20452AD46A3000D54E9F /* ContentView.swift */; };
+		0D2C20482AD46A3100D54E9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D2C20472AD46A3100D54E9F /* Assets.xcassets */; };
+		0D2C204B2AD46A3100D54E9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D2C204A2AD46A3100D54E9F /* Preview Assets.xcassets */; };
+		0D2C20552AD46C4E00D54E9F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643D52AD1D7A400F6BED6 /* Category.swift */; };
+		0D2C20562AD46C4E00D54E9F /* ArticleNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643D82AD1DA3C00F6BED6 /* ArticleNewsViewModel.swift */; };
+		0D2C20572AD46C4E00D54E9F /* ArticleSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643E62AD1F6C300F6BED6 /* ArticleSearchViewModel.swift */; };
+		0D2C20582AD46C4E00D54E9F /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D8465C52AD1286000E1A043 /* news.json */; };
+		0D2C20592AD46C4E00D54E9F /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643E42AD1EF3600F6BED6 /* DataStore.swift */; };
+		0D2C205A2AD46C4E00D54E9F /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643F22AD31F4D00F6BED6 /* MenuItem.swift */; };
+		0D2C205B2AD46C4E00D54E9F /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8465C72AD128B200E1A043 /* Article.swift */; };
+		0D2C205C2AD46C4E00D54E9F /* ArticleBookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643E02AD1E98B00F6BED6 /* ArticleBookmarkViewModel.swift */; };
+		0D2C205D2AD46C4E00D54E9F /* NewsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8465C92AD12D5800E1A043 /* NewsAPIResponse.swift */; };
+		0D2C205E2AD46C4E00D54E9F /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643D32AD1D73000F6BED6 /* NewsAPI.swift */; };
 		0D8465B82AD1283700E1A043 /* SimpleNewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8465B72AD1283700E1A043 /* SimpleNewsApp.swift */; };
 		0D8465BA2AD1283700E1A043 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8465B92AD1283700E1A043 /* ContentView.swift */; };
 		0D8465BC2AD1283800E1A043 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D8465BB2AD1283800E1A043 /* Assets.xcassets */; };
@@ -36,6 +50,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D2C20412AD46A3000D54E9F /* XCA News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XCA News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D2C20432AD46A3000D54E9F /* SimpleNewsMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNewsMacApp.swift; sourceTree = "<group>"; };
+		0D2C20452AD46A3000D54E9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0D2C20472AD46A3100D54E9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0D2C204A2AD46A3100D54E9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0D2C204C2AD46A3100D54E9F /* SimpleNewsMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleNewsMac.entitlements; sourceTree = "<group>"; };
+		0D2C20502AD46AD200D54E9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0D8465B42AD1283700E1A043 /* SimpleNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D8465B72AD1283700E1A043 /* SimpleNewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNewsApp.swift; sourceTree = "<group>"; };
 		0D8465B92AD1283700E1A043 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +88,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0D2C203E2AD46A3000D54E9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0D8465B12AD1283700E1A043 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -77,10 +105,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D2C20422AD46A3000D54E9F /* SimpleNewsMac */ = {
+			isa = PBXGroup;
+			children = (
+				0D2C20502AD46AD200D54E9F /* Info.plist */,
+				0D2C20432AD46A3000D54E9F /* SimpleNewsMacApp.swift */,
+				0D2C20452AD46A3000D54E9F /* ContentView.swift */,
+				0D2C20472AD46A3100D54E9F /* Assets.xcassets */,
+				0D2C204C2AD46A3100D54E9F /* SimpleNewsMac.entitlements */,
+				0D2C20492AD46A3100D54E9F /* Preview Content */,
+			);
+			path = SimpleNewsMac;
+			sourceTree = "<group>";
+		};
+		0D2C20492AD46A3100D54E9F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0D2C204A2AD46A3100D54E9F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0D2C20512AD46BC700D54E9F /* SimpleNewsShared */ = {
+			isa = PBXGroup;
+			children = (
+				0D8465C52AD1286000E1A043 /* news.json */,
+				0D2C20542AD46BDD00D54E9F /* API */,
+				0D2C20532AD46BD800D54E9F /* ViewModels */,
+				0D2C20522AD46BD400D54E9F /* Models */,
+			);
+			path = SimpleNewsShared;
+			sourceTree = "<group>";
+		};
+		0D2C20522AD46BD400D54E9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0D8465C72AD128B200E1A043 /* Article.swift */,
+				0D8465C92AD12D5800E1A043 /* NewsAPIResponse.swift */,
+				0DD643D52AD1D7A400F6BED6 /* Category.swift */,
+				0DD643E42AD1EF3600F6BED6 /* DataStore.swift */,
+				0DD643F22AD31F4D00F6BED6 /* MenuItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0D2C20532AD46BD800D54E9F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0DD643D82AD1DA3C00F6BED6 /* ArticleNewsViewModel.swift */,
+				0DD643E02AD1E98B00F6BED6 /* ArticleBookmarkViewModel.swift */,
+				0DD643E62AD1F6C300F6BED6 /* ArticleSearchViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0D2C20542AD46BDD00D54E9F /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0DD643D32AD1D73000F6BED6 /* NewsAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		0D8465AB2AD1283600E1A043 = {
 			isa = PBXGroup;
 			children = (
+				0D2C20512AD46BC700D54E9F /* SimpleNewsShared */,
 				0D8465B62AD1283700E1A043 /* SimpleNews */,
+				0D2C20422AD46A3000D54E9F /* SimpleNewsMac */,
 				0D8465B52AD1283700E1A043 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				0D8465B42AD1283700E1A043 /* SimpleNews.app */,
+				0D2C20412AD46A3000D54E9F /* XCA News.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,8 +189,6 @@
 		0D8465B62AD1283700E1A043 /* SimpleNews */ = {
 			isa = PBXGroup;
 			children = (
-				0DD643D72AD1DA3200F6BED6 /* ViewModel */,
-				0DD643D22AD1D72900F6BED6 /* API */,
 				0DD643CB2AD1D02D00F6BED6 /* Info.plist */,
 				0D8465CB2AD1CA2900E1A043 /* Views */,
 				0D8465C62AD128AC00E1A043 /* Models */,
@@ -105,7 +196,6 @@
 				0D8465B92AD1283700E1A043 /* ContentView.swift */,
 				0D8465BB2AD1283800E1A043 /* Assets.xcassets */,
 				0D8465BD2AD1283800E1A043 /* Preview Content */,
-				0D8465C52AD1286000E1A043 /* news.json */,
 			);
 			path = SimpleNews;
 			sourceTree = "<group>";
@@ -121,11 +211,6 @@
 		0D8465C62AD128AC00E1A043 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0D8465C72AD128B200E1A043 /* Article.swift */,
-				0D8465C92AD12D5800E1A043 /* NewsAPIResponse.swift */,
-				0DD643D52AD1D7A400F6BED6 /* Category.swift */,
-				0DD643E42AD1EF3600F6BED6 /* DataStore.swift */,
-				0DD643F22AD31F4D00F6BED6 /* MenuItem.swift */,
 				0DD643F42AD336AC00F6BED6 /* TabMenuItem.swift */,
 			);
 			path = Models;
@@ -149,27 +234,26 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		0DD643D22AD1D72900F6BED6 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				0DD643D32AD1D73000F6BED6 /* NewsAPI.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		0DD643D72AD1DA3200F6BED6 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				0DD643D82AD1DA3C00F6BED6 /* ArticleNewsViewModel.swift */,
-				0DD643E02AD1E98B00F6BED6 /* ArticleBookmarkViewModel.swift */,
-				0DD643E62AD1F6C300F6BED6 /* ArticleSearchViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0D2C20402AD46A3000D54E9F /* SimpleNewsMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D2C204F2AD46A3100D54E9F /* Build configuration list for PBXNativeTarget "SimpleNewsMac" */;
+			buildPhases = (
+				0D2C203D2AD46A3000D54E9F /* Sources */,
+				0D2C203E2AD46A3000D54E9F /* Frameworks */,
+				0D2C203F2AD46A3000D54E9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleNewsMac;
+			productName = SimpleNewsMac;
+			productReference = 0D2C20412AD46A3000D54E9F /* XCA News.app */;
+			productType = "com.apple.product-type.application";
+		};
 		0D8465B32AD1283700E1A043 /* SimpleNews */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D8465C22AD1283800E1A043 /* Build configuration list for PBXNativeTarget "SimpleNews" */;
@@ -197,6 +281,9 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					0D2C20402AD46A3000D54E9F = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
 					0D8465B32AD1283700E1A043 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -216,11 +303,22 @@
 			projectRoot = "";
 			targets = (
 				0D8465B32AD1283700E1A043 /* SimpleNews */,
+				0D2C20402AD46A3000D54E9F /* SimpleNewsMac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0D2C203F2AD46A3000D54E9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D2C20582AD46C4E00D54E9F /* news.json in Resources */,
+				0D2C204B2AD46A3100D54E9F /* Preview Assets.xcassets in Resources */,
+				0D2C20482AD46A3100D54E9F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0D8465B22AD1283700E1A043 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -234,6 +332,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0D2C203D2AD46A3000D54E9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D2C205E2AD46C4E00D54E9F /* NewsAPI.swift in Sources */,
+				0D2C205A2AD46C4E00D54E9F /* MenuItem.swift in Sources */,
+				0D2C20462AD46A3000D54E9F /* ContentView.swift in Sources */,
+				0D2C20592AD46C4E00D54E9F /* DataStore.swift in Sources */,
+				0D2C20442AD46A3000D54E9F /* SimpleNewsMacApp.swift in Sources */,
+				0D2C205B2AD46C4E00D54E9F /* Article.swift in Sources */,
+				0D2C20572AD46C4E00D54E9F /* ArticleSearchViewModel.swift in Sources */,
+				0D2C20562AD46C4E00D54E9F /* ArticleNewsViewModel.swift in Sources */,
+				0D2C20552AD46C4E00D54E9F /* Category.swift in Sources */,
+				0D2C205D2AD46C4E00D54E9F /* NewsAPIResponse.swift in Sources */,
+				0D2C205C2AD46C4E00D54E9F /* ArticleBookmarkViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0D8465B02AD1283700E1A043 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -267,6 +383,68 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		0D2C204D2AD46A3100D54E9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SimpleNewsMac/SimpleNewsMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SimpleNewsMac/Preview Content\"";
+				DEVELOPMENT_TEAM = 9K7Y8T69T3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SimpleNewsMac/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hado.SimpleNewsMac;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "XCA News";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0D2C204E2AD46A3100D54E9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SimpleNewsMac/SimpleNewsMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SimpleNewsMac/Preview Content\"";
+				DEVELOPMENT_TEAM = 9K7Y8T69T3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SimpleNewsMac/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hado.SimpleNewsMac;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "XCA News";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		0D8465C02AD1283800E1A043 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -446,6 +624,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0D2C204F2AD46A3100D54E9F /* Build configuration list for PBXNativeTarget "SimpleNewsMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D2C204D2AD46A3100D54E9F /* Debug */,
+				0D2C204E2AD46A3100D54E9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0D8465AF2AD1283600E1A043 /* Build configuration list for PBXProject "SimpleNews" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
