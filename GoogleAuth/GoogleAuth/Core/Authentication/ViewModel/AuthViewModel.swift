@@ -76,7 +76,14 @@ class AuthViewModel: ObservableObject {
     }
     
     func deleteAccount() {
-        
+        guard let userSession = self.userSession else { return }
+        // delete current user account
+        userSession.delete()
+        // delete user from Firestore also
+        Firestore.firestore().collection("users").document(userSession.uid).delete()
+        self.alertItem = AlertContext.generateAlert(title: "Delete Account", message: "Delete Account Successfully", action: {
+            self.signOut()
+        })
     }
     
     func fetchUser() async {

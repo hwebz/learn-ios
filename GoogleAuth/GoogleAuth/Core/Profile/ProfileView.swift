@@ -11,6 +11,8 @@ struct ProfileView: View {
     
     @EnvironmentObject var viewModel: AuthViewModel
     
+    @State private var confirmDeleteAccount = false
+    
     var body: some View {
         if let user = viewModel.currentUser {
             List {
@@ -49,11 +51,28 @@ struct ProfileView: View {
                     }
                     
                     Button {
-                        print("Deleting account...")
+                        confirmDeleteAccount = true
                     } label: {
                         SettingsRowView(imageName: "xmark.circle.fill", title: "Delete Account", tintColor: Color(.red))
                     }
+                    .alert(isPresented: $confirmDeleteAccount) {
+                        Alert(
+                            title: Text("Delete Account"),
+                            message: Text("Are your sure?"),
+                            primaryButton: .destructive(Text("Delete")) {
+                                viewModel.deleteAccount()
+                            },
+                            secondaryButton: .default(Text("Cancel"))
+                        )
+                    }
                 }
+            }
+            .alert(item: $viewModel.alertItem) { alertItem in
+                Alert(
+                    title: alertItem.title,
+                    message: alertItem.message,
+                    dismissButton: alertItem.dismissButton
+                )
             }
         }
     }
