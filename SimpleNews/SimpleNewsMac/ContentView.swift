@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+    
+    @SceneStorage("item_selection") private var selectedMenuItemId: MenuItem.ID?
+    private var selection: Binding<MenuItem.ID?> {
+        Binding {
+            selectedMenuItemId ?? MenuItem.category(.general).id
+        } set: { newValue in
+            if let newValue = newValue {
+                selectedMenuItemId = newValue
+            }
         }
-        .padding()
+    }
+    
+    var body: some View {
+        NavigationView {
+            SidebarListView(selection: selection)
+        }
+        .frame(minWidth: 1000, minHeight: 386)
     }
 }
 
