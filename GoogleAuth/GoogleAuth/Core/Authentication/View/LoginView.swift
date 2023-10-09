@@ -12,6 +12,8 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -32,10 +34,27 @@ struct LoginView: View {
                 .padding(.horizontal)
                 .padding(.top, 12)
                 
+                // Forgot password link
+                NavigationLink {
+                    ForgotPasswordView()
+                        .navigationBarBackButtonHidden()
+                } label: {
+                    Text("Forgot password")
+                        .fontWeight(.bold)
+                        .font(.system(size: 14))
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        .padding([.horizontal, .top])
+                    
+                }
+                
                 // Sign In Button
                 AuthButton(title: "SIGN IN") {
-                    print("Log user in..")
+                    Task {
+                        try await viewModel.signIn(withEmail: email, password: password)
+                    }
                 }
+                .disabled(!formIsValid)
+                .opacity(formIsValid ? 1 : 0.5)
                 .padding(.top, 24)
                 
                 Spacer()
@@ -54,11 +73,28 @@ struct LoginView: View {
                 }
             }
         }
+        .alert(item: $viewModel.alertItem) { alertItem in
+            Alert(
+                title: alertItem.title,
+                message: alertItem.message,
+                dismissButton: alertItem.dismissButton
+            )
+        }
+    }
+}
+
+extension LoginView: AuthenticationFormProtocol {
+    var formIsValid: Bool {
+        return !email.isEmpty
+        && email.contains("@")
+        && !password.isEmpty
+        && password.count > 5
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .environmentObject(AuthViewModel())
     }
 }
