@@ -137,3 +137,12 @@
 <div style="display: flex;flex-wrap: wrap;">
     <img src="./screenshots/badge-button.png" width="200" />
 </div>
+
+### Swipe Menu From Bottom To Top (Drag)
+> /SwipeMenu
+
+#### Screenshots
+<div style="display: flex;flex-wrap: wrap;">
+    <img src="./screenshots/swipe-menu.png" width="200" />
+    <img src="./screenshots/swipe-menu-2.png" width="200" />
+</div>
