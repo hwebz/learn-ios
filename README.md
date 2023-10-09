@@ -129,3 +129,11 @@
     <img src="./screenshots/simple-news-3.png" width="200" />
     <img src="./screenshots/simple-news-4.png" width="200" />
 </div>
+
+### Badge Buttons
+> /ButtonWithBadge
+
+#### Screenshots
+<div style="display: flex;flex-wrap: wrap;">
+    <img src="./screenshots/badge-button.png" width="200" />
+</div>
