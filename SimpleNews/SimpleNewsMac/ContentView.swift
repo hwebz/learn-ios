@@ -23,8 +23,22 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             SidebarListView(selection: selection)
+                .toolbar {
+                    ToolbarItem(placement: .navigation) {
+                        Button {
+                            toggleSidebar()
+                        } label: {
+                            Image(systemName: "sidebar.left")
+                        }
+                    }
+                }
         }
         .frame(minWidth: 1000, minHeight: 386)
+    }
+    
+    private func toggleSidebar() {
+        NSApp.keyWindow?.firstResponder?
+            .tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
     }
 }
 

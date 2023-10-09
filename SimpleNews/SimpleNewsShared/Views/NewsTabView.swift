@@ -9,7 +9,9 @@ import SwiftUI
 
 struct NewsTabView: View {
     
+    #if os(iOS)
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    #endif
     @StateObject var articleNewsVM = ArticleNewsViewModel()
     
     // OLD CODE for iOS only
@@ -49,7 +51,20 @@ struct NewsTabView: View {
             .navigationTitle(articleNewsVM.fetchTaskToken.category.text)
             .task(id: articleNewsVM.fetchTaskToken, loadTask)
             .refreshable(action: loadTask)
+            #if os(iOS)
             .navigationBarItems(trailing: navigationBarItem)
+            #elseif os(macOS)
+            .navigationSubtitle(articleNewsVM.lastRefreshedDateText)
+            .focusedSceneValue(\.refreshAction, refreshTask)
+            .toolbar {
+                ToolbarItem(placement: .automatic) {
+                    Button(action: refreshTask) {
+                        Image(systemName: "arrow.clockwise")
+                            .imageScale(.large)
+                    }
+                }
+            }
+            #endif
     }
     
     @ViewBuilder
@@ -96,6 +111,7 @@ struct NewsTabView: View {
         await articleNewsVM.loadArticles()
     }
     
+    #if os(iOS)
     @ViewBuilder
     private var navigationBarItem: some View {
         switch horizontalSizeClass {
@@ -118,6 +134,7 @@ struct NewsTabView: View {
                 }
         }
     }
+    #endif
 }
 
 struct NewsTabView_Previews: PreviewProvider {

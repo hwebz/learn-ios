@@ -18,6 +18,9 @@ struct BoookMarkTabView: View {
         ArticleListView(articles: articles)
         .overlay(OverlayView(isEmpty: articles.isEmpty))
         .navigationTitle("Saved Articles")
+        #if os(macOS)
+        .navigationSubtitle("\(articles.count) bookmark(s)")
+        #endif
         .searchable(text: $searchText)
     }
     

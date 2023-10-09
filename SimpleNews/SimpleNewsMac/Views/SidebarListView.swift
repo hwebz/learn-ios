@@ -45,11 +45,12 @@ struct SidebarListView: View {
     private func viewForMenuItem(_ item: MenuItem) -> some View {
         switch item {
             case .saved:
-                Text("Saved")
+                BoookMarkTabView()
             case .search:
                 Text("Search")
             case .category(let category):
-                Text("Category: \(category.text)")
+                NewsTabView(category: category)
+                    .id(category.id)
         }
     }
     
