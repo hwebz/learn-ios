@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MenuItem: CaseIterable {
+enum MenuItem: CaseIterable, Hashable {
     case search
     case saved
     case category(Category)
