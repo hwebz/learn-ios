@@ -43,9 +43,17 @@ class ArticleBookmarkViewModel: ObservableObject {
         bookmarkUpdated()
     }
     
-    func removeAllHistory() {
+    func removeAllBookmarks() {
         bookmarks.removeAll()
         bookmarkUpdated()
+    }
+    
+    func toggleBookmark(for article: Article) {
+        if isBookmarked(for: article) {
+            removeBookmark(for: article)
+        } else {
+            addBookmark(for: article)
+        }
     }
     
     private func bookmarkUpdated() {

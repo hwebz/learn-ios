@@ -39,7 +39,7 @@ struct SettingsView: View {
                             .frame(width: 150, alignment: .trailing)
                         
                         Button("Clear All") {
-                            bookmarkVM.removeAllHistory()
+                            bookmarkVM.removeAllBookmarks()
                         }
                     }
                 }

@@ -45,7 +45,7 @@ struct SidebarListView: View {
     private func viewForMenuItem(_ item: MenuItem) -> some View {
         switch item {
             case .saved:
-                BoookMarkTabView()
+                BookmarkTabView()
             case .search:
                 SearchTabView()
             case .category(let category):

@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @AppStorage("item_selection") private var selectedMenuItemId: MenuItem.ID?
+    @State private var selectedMenuItemId: MenuItem.ID?
+    @EnvironmentObject private var searchVM: ArticleSearchViewModel
+    
     private var selection: Binding<MenuItem.ID?> {
         Binding {
             selectedMenuItemId ?? MenuItem.category(.general).id
@@ -21,7 +23,11 @@ struct ContentView: View {
     }
     
     var body: some View {
-        NavigationStack {
+        ZStack {
+            navigationLinkForMenuItem(MenuItem.search) {
+                EmptyView()
+            }
+            .hidden()
             List {
                 Section {
                     navigationLinkForMenuItem(.saved) {
@@ -39,21 +45,22 @@ struct ContentView: View {
                     Text("Categories")
                 }
             }
-            .navigationDestination(for: MenuItem.self) { item in
-                viewForMenuItem(item)
-            }
-            .searchable(text: .constant(""))
-            .navigationTitle("XCA News")
         }
+        .searchable(text: $searchVM.searchQuery)
+        .onSubmit(of: .search, search)
+        .navigationTitle("XCA News")
     }
     
     @ViewBuilder
     private func viewForMenuItem(_ item: MenuItem) -> some View {
         switch item {
             case .saved:
-                Text("Saved")
+                BookmarkTabView()
             case .search:
-                Text("Search")
+                SearchTabView()
+                    .onDisappear {
+                        searchVM.searchQuery = ""
+                    }
             case .category(let category):
                 NewsTabView(category: category)
         }
@@ -61,9 +68,12 @@ struct ContentView: View {
     
     private func navigationLinkForMenuItem<Label: View>(_ item: MenuItem, @ViewBuilder label: () -> Label) -> some View {
         NavigationLink(
-            value: item,
-            label: label
-        )
+            destination: viewForMenuItem(item),
+            tag: item.id,
+            selection: $selectedMenuItemId
+        ) {
+            label()
+        }
         .listItemTint(item.listItemTintColor)
     }
     
@@ -74,6 +84,18 @@ struct ContentView: View {
             Text(item.text)
         }
         .padding(.vertical, 10)
+    }
+    
+    private func search() {
+        let searchQuery = searchVM.searchQuery.trimmingCharacters(in: .whitespacesAndNewlines)
+        if searchQuery.isEmpty {
+            return
+        }
+        
+        selectedMenuItemId = MenuItem.search.id
+        Task {
+            await searchVM.searchArticle()
+        }
     }
 }
 
@@ -105,5 +127,7 @@ fileprivate extension MenuItem {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(ArticleBookmarkViewModel.shared)
+            .environmentObject(ArticleSearchViewModel.shared)
     }
 }

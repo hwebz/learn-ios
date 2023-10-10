@@ -11,7 +11,7 @@ struct SearchTabView: View {
 #if os(iOS)
     @StateObject var searchVM = ArticleSearchViewModel.shared
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-#elseif os(macOS)
+#elseif os(macOS) || os(watchOS)
     @EnvironmentObject var searchVM: ArticleSearchViewModel
 #endif
     
@@ -32,7 +32,7 @@ struct SearchTabView: View {
                 }
             }
             .onSubmit(of: .search, search)
-#elseif os(macOS)
+#elseif os(macOS) || os(watchOS)
             .navigationTitle(searchVM.searchQuery.isEmpty ? "Search" : "Search results for \(searchVM.searchQuery)")
 #endif
         
@@ -61,7 +61,7 @@ struct SearchTabView: View {
                 } else {
                     EmptyPlaceholderView(text: "Type your query to search from NewsAPI", image: Image(systemName: "magnifyingglass"))
                 }
-#elseif os(macOS)
+#elseif os(macOS) || os(watchOS)
                 ProgressView()
 #endif
             case .success(let articles) where articles.isEmpty:

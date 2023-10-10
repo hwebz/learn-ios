@@ -1,5 +1,5 @@
 //
-//  BoookMarkTabView.swift
+//  BookmarkTabView.swift
 //  SimpleNews
 //
 //  Created by Personal on 08/10/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BoookMarkTabView: View {
+struct BookmarkTabView: View {
     
     @EnvironmentObject var articleBookmarkVM: ArticleBookmarkViewModel
     @State var searchText: String = ""
@@ -21,7 +21,11 @@ struct BoookMarkTabView: View {
         #if os(macOS)
         .navigationSubtitle("\(articles.count) bookmark(s)")
         #endif
+        #if os(watchOS)
+        .conditionalSearchable(showSearchbar: !articles.isEmpty, searchText: $searchText)
+        #else
         .searchable(text: $searchText)
+        #endif
     }
     
     
@@ -43,11 +47,24 @@ struct BoookMarkTabView: View {
     }
 }
 
-struct BoookMarkTabView_Previews: PreviewProvider {
+#if os(watchOS)
+fileprivate extension View {
+    @ViewBuilder
+    func conditionalSearchable(showSearchbar: Bool, searchText: Binding<String>) -> some View {
+        if showSearchbar {
+            searchable(text: searchText)
+        } else {
+            self
+        }
+    }
+}
+#endif
+
+struct BookmarkTabView_Previews: PreviewProvider {
     
     @StateObject static var articleBookmarkVM = ArticleBookmarkViewModel.shared
     static var previews: some View {
-        BoookMarkTabView()
+        BookmarkTabView()
             .environmentObject(articleBookmarkVM)
     }
 }

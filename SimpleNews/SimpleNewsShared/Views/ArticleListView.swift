@@ -38,7 +38,7 @@ struct ArticleListView: View {
                     }
                 #elseif os(watchOS)
                 NavigationLink(destination: {
-                    Text("Article Detail: \(article.title)")
+                    ArticleDetailView(article: article)
                 }, label: {
                     ArticleRowView(article: article)
                 })

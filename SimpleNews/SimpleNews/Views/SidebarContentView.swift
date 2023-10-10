@@ -55,7 +55,7 @@ struct SidebarContentView: View {
             case .search:
                 SearchTabView()
             case .saved:
-                BoookMarkTabView()
+                BookmarkTabView()
             case .category(let category):
                 NewsTabView(category: category)
                 // NOTE: If we change selection manually, the detail view can't be rendered becasue it not detected the change

@@ -13,12 +13,16 @@ class ArticleSearchViewModel: ObservableObject {
     @Published var phase = DataFetchPhase<[Article]>.empty
     @Published var searchQuery = ""
     @Published var history = [String]()
+    @Published var currentSearch: String?
     private let newsAPI = NewsAPI.shared
     
     private let historyDataStore = PlistDataStore<[String]>(filename: "histories")
     private let historyMaxLimit = 10
     
     static let shared = ArticleSearchViewModel()
+    private var trimmedSearchQuery: String {
+        searchQuery.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
     
     private init() {
         load()
@@ -52,23 +56,27 @@ class ArticleSearchViewModel: ObservableObject {
     func searchArticle() async {
         if Task.isCancelled { return }
         
-        let searchQuery = self.searchQuery.trimmingCharacters(in: .whitespacesAndNewlines)
+        let searchQuery = trimmedSearchQuery
         phase = .empty
         
         if (searchQuery.isEmpty) {
             return
         }
         
+        currentSearch = searchQuery
         do {
             let articles = try await newsAPI.search(for: searchQuery)
             if Task.isCancelled { return }
-            if (searchQuery != self.searchQuery) {
+            if (searchQuery != trimmedSearchQuery) {
                 return
             }
             addHistory(searchQuery)
             phase = .success(articles)
         } catch {
             if Task.isCancelled { return }
+            if (searchQuery != trimmedSearchQuery) {
+                return
+            }
             phase = .failure(error)
         }
     }

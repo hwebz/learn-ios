@@ -54,7 +54,7 @@ struct TabContentView: View {
 //            }
 //            
 //            NavigationView {
-//                BoookMarkTabView()
+//                BookmarkTabView()
 //            }
 //            .tabItem {
 //                Label("Saved", systemImage: "bookmark")
@@ -68,7 +68,7 @@ struct TabContentView: View {
             case .news:
                 NewsTabView(category: selectedCategory ?? .general)
             case .saved:
-                BoookMarkTabView()
+                BookmarkTabView()
             case .search:
                 SearchTabView()
         }
