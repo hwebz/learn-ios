@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct SearchTabView: View {
-#if os(iOS)
+    #if os(iOS)
     @StateObject var searchVM = ArticleSearchViewModel.shared
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-#elseif os(macOS)
+    #elseif os(macOS)
     @EnvironmentObject var searchVM: ArticleSearchViewModel
-#endif
+    #endif
     
     var shouldShowSuggestions: Bool {
         searchVM.searchQuery.isEmpty
@@ -22,9 +22,9 @@ struct SearchTabView: View {
     var body: some View {
         ArticleListView(articles: articles)
             .overlay(OverlayView)
-#if os(iOS)
+            #if os(iOS)
             .navigationTitle("Search")
-        //            .searchable(text: $searchVM.searchQuery, placement: .navigationBarDrawer) { suggestionsView }
+//            .searchable(text: $searchVM.searchQuery, placement: .navigationBarDrawer) { suggestionsView }
             .searchable(text: $searchVM.searchQuery, placement: horizontalSizeClass == .regular ? .navigationBarDrawer : .automatic) { suggestionsView }
             .onChange(of: searchVM.searchQuery) { newSearchQuery in
                 if newSearchQuery.isEmpty {
@@ -32,9 +32,9 @@ struct SearchTabView: View {
                 }
             }
             .onSubmit(of: .search, search)
-#elseif os(macOS)
+            #elseif os(macOS)
             .navigationTitle(searchVM.searchQuery.isEmpty ? "Search" : "Search results for \(searchVM.searchQuery)")
-#endif
+            #endif
         
     }
     
@@ -50,7 +50,7 @@ struct SearchTabView: View {
     private var OverlayView: some View {
         switch searchVM.phase {
             case .empty:
-#if os(iOS)
+                #if os(iOS)
                 if !searchVM.searchQuery.isEmpty {
                     ProgressView()
                 } else if !searchVM.history.isEmpty {
@@ -61,9 +61,9 @@ struct SearchTabView: View {
                 } else {
                     EmptyPlaceholderView(text: "Type your query to search from NewsAPI", image: Image(systemName: "magnifyingglass"))
                 }
-#elseif os(macOS)
+                #elseif os(macOS)
                 ProgressView()
-#endif
+                #endif
             case .success(let articles) where articles.isEmpty:
                 EmptyPlaceholderView(text: "No search results found", image: Image(systemName: "magnifyingglass"))
             case .failure(let error):

@@ -43,6 +43,11 @@ class ArticleBookmarkViewModel: ObservableObject {
         bookmarkUpdated()
     }
     
+    func removeAllHistory() {
+        bookmarks.removeAll()
+        bookmarkUpdated()
+    }
+    
     private func bookmarkUpdated() {
         let bookmarks = self.bookmarks
         Task.init(operation: {

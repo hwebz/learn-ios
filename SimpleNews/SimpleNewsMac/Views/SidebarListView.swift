@@ -47,7 +47,7 @@ struct SidebarListView: View {
             case .saved:
                 BoookMarkTabView()
             case .search:
-                Text("Search")
+                SearchTabView()
             case .category(let category):
                 NewsTabView(category: category)
                     .id(category.id)
