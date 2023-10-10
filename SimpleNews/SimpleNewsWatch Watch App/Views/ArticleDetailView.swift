@@ -12,6 +12,7 @@ struct ArticleDetailView: View {
     let article: Article
     
     @EnvironmentObject private var bookmarkVM: ArticleBookmarkViewModel
+    @EnvironmentObject private var connectivityVM: WatchConnectivityViewModel
     
     var body: some View {
         ScrollView {
@@ -53,11 +54,18 @@ struct ArticleDetailView: View {
                             .imageScale(.large)
                     }
                     
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "arrow.turn.up.forward.iphone")
-                            .imageScale(.large)
+                    if (connectivityVM.isReachable) {
+                        if connectivityVM.isSending {
+                            ProgressView()
+                                .frame(height: 20)
+                        } else {
+                            Button {
+                                connectivityVM.sendURLToiPhone(article: article)
+                            } label: {
+                                Image(systemName: "arrow.turn.up.forward.iphone")
+                                    .imageScale(.large)
+                            }
+                        }
                     }
                 }
                 
@@ -77,5 +85,6 @@ struct ArticleDetailView_Previews: PreviewProvider {
     static var previews: some View {
         ArticleDetailView(article: Article.previewData![2])
             .environmentObject(ArticleBookmarkViewModel.shared)
+            .environmentObject(WatchConnectivityViewModel.shared)
     }
 }

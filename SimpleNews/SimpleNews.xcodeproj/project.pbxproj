@@ -63,6 +63,9 @@
 		0DC216612AD5550300E9E821 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC216602AD5550300E9E821 /* ArticleDetailView.swift */; };
 		0DC216622AD5578B00E9E821 /* BookmarkTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643E22AD1ED9F00F6BED6 /* BookmarkTabView.swift */; };
 		0DC216632AD5597E00E9E821 /* SearchTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC216342AD510D300E9E821 /* SearchTabView.swift */; };
+		0DC216652AD55EF700E9E821 /* WatchConnectivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC216642AD55EF700E9E821 /* WatchConnectivityViewModel.swift */; };
+		0DC216662AD5849100E9E821 /* WatchConnectivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC216642AD55EF700E9E821 /* WatchConnectivityViewModel.swift */; };
+		0DC216672AD5849600E9E821 /* WatchConnectivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC216642AD55EF700E9E821 /* WatchConnectivityViewModel.swift */; };
 		0DD643CA2AD1CD9B00F6BED6 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D8465C52AD1286000E1A043 /* news.json */; };
 		0DD643CF2AD1D37D00F6BED6 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643CE2AD1D37D00F6BED6 /* ArticleListView.swift */; };
 		0DD643D12AD1D46E00F6BED6 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643D02AD1D46E00F6BED6 /* SafariView.swift */; };
@@ -136,6 +139,7 @@
 		0DC216462AD5141D00E9E821 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0DC2165E2AD5237200E9E821 /* SimpleNewsWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SimpleNewsWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0DC216602AD5550300E9E821 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
+		0DC216642AD55EF700E9E821 /* WatchConnectivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityViewModel.swift; sourceTree = "<group>"; };
 		0DD643CB2AD1D02D00F6BED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0DD643CE2AD1D37D00F6BED6 /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 		0DD643D02AD1D46E00F6BED6 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 				0DD643D82AD1DA3C00F6BED6 /* ArticleNewsViewModel.swift */,
 				0DD643E02AD1E98B00F6BED6 /* ArticleBookmarkViewModel.swift */,
 				0DD643E62AD1F6C300F6BED6 /* ArticleSearchViewModel.swift */,
+				0DC216642AD55EF700E9E821 /* WatchConnectivityViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -518,6 +523,7 @@
 				0D2C20612AD46CC400D54E9F /* SidebarListView.swift in Sources */,
 				0D2C205D2AD46C4E00D54E9F /* NewsAPIResponse.swift in Sources */,
 				0D2C205C2AD46C4E00D54E9F /* ArticleBookmarkViewModel.swift in Sources */,
+				0DC216672AD5849600E9E821 /* WatchConnectivityViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +533,7 @@
 			files = (
 				0D8465BA2AD1283700E1A043 /* ContentView.swift in Sources */,
 				0DD643E52AD1EF3600F6BED6 /* DataStore.swift in Sources */,
+				0DC216662AD5849100E9E821 /* WatchConnectivityViewModel.swift in Sources */,
 				0DD643CF2AD1D37D00F6BED6 /* ArticleListView.swift in Sources */,
 				0DD643DD2AD1E09C00F6BED6 /* EmptyPlaceholderView.swift in Sources */,
 				0D8465CD2AD1CA3200E1A043 /* ArticleRowView.swift in Sources */,
@@ -561,6 +568,7 @@
 				0DC216582AD514B200E9E821 /* NewsAPIResponse.swift in Sources */,
 				0DC216632AD5597E00E9E821 /* SearchTabView.swift in Sources */,
 				0DC2165A2AD51A2F00E9E821 /* NewsTabView.swift in Sources */,
+				0DC216652AD55EF700E9E821 /* WatchConnectivityViewModel.swift in Sources */,
 				0DC216502AD514B200E9E821 /* DataStore.swift in Sources */,
 				0DC216592AD51A2F00E9E821 /* RetryView.swift in Sources */,
 				0DC216562AD514B200E9E821 /* Article.swift in Sources */,

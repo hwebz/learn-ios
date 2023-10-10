@@ -11,18 +11,27 @@ struct ArticleListView: View {
     
     #if os(iOS)
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @State private var selectedArticleURL: URL?
     #elseif os(macOS)
     @Environment(\.colorScheme) private var colorScheme
     #endif
     let articles: [Article]
-    @State private var selectedArticle: Article?
+//    @State private var selectedArticle: Article?
     
     var body: some View {
         rootView
         #if os(iOS)
-            .sheet(item: $selectedArticle) {
-                SafariView(url: $0.articleURL)
+//            .sheet(item: $selectedArticle) {
+//                SafariView(url: $0.articleURL)
+            .sheet(item: $selectedArticleURL) {
+                SafariView(url: $0)
                     .edgesIgnoringSafeArea(.bottom)
+                    .id($0)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .articleSent, object: nil)) { notification in
+                if let url = notification.userInfo?["url"] as? URL, url != selectedArticleURL {
+                    selectedArticleURL = url
+                }
             }
         #endif
     }
@@ -34,7 +43,8 @@ struct ArticleListView: View {
                 #if os(iOS)
                 ArticleRowView(article: article)
                     .onTapGesture {
-                        selectedArticle = article
+//                        selectedArticle = article
+                        selectedArticleURL = article.articleURL
                     }
                 #elseif os(watchOS)
                 NavigationLink(destination: {
@@ -93,7 +103,8 @@ struct ArticleListView: View {
     
     private func handleOnTapGesture(article: Article) {
         #if os(iOS)
-            self.selectedArticle = article
+//            self.selectedArticle = article
+            self.selectedArticleURL = article.articleURL
         #elseif os(macOS)
             NSWorkspace.shared.open(article.articleURL)
         #endif
@@ -114,6 +125,10 @@ struct ArticleListView: View {
         listView
         #endif
     }
+}
+
+extension URL: Identifiable {
+    public var id: String { absoluteString }
 }
 
 struct ArticleListView_Previews: PreviewProvider {
