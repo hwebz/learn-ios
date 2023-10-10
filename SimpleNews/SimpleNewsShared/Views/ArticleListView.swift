@@ -20,24 +20,34 @@ struct ArticleListView: View {
     var body: some View {
         rootView
         #if os(iOS)
-        .sheet(item: $selectedArticle) {
-            SafariView(url: $0.articleURL)
-                .edgesIgnoringSafeArea(.bottom)
-        }
+            .sheet(item: $selectedArticle) {
+                SafariView(url: $0.articleURL)
+                    .edgesIgnoringSafeArea(.bottom)
+            }
         #endif
     }
     
-    #if os(iOS)
+    #if os(iOS) || os(watchOS)
     var listView: some View {
         List {
             ForEach(articles) { article in
+                #if os(iOS)
                 ArticleRowView(article: article)
                     .onTapGesture {
                         selectedArticle = article
                     }
+                #elseif os(watchOS)
+                NavigationLink(destination: {
+                    Text("Article Detail: \(article.title)")
+                }, label: {
+                    ArticleRowView(article: article)
+                })
+                #endif
             }
+            #if os(iOS)
             .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
             .listRowSeparator(.hidden)
+            #endif
         }
         .listStyle(.plain)
     }
@@ -76,6 +86,8 @@ struct ArticleListView: View {
         [GridItem(.adaptive(minimum: 300), spacing: 8)]
         #elseif os(macOS)
         [GridItem(.adaptive(minimum: 272, maximum: 272), spacing: 8)]
+        #else
+        []
         #endif
     }
     
@@ -98,6 +110,8 @@ struct ArticleListView: View {
         }
         #elseif os(macOS)
         gridView
+        #elseif os(watchOS)
+        listView
         #endif
     }
 }

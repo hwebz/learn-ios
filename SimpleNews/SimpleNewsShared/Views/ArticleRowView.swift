@@ -25,6 +25,8 @@ struct ArticleRowView: View {
             }
         #elseif os(macOS)
         GeometryReader { contentView(proxy: $0) }
+        #elseif os(watchOS)
+        watchContentView
         #endif
     }
     
@@ -33,35 +35,7 @@ struct ArticleRowView: View {
         VStack(alignment: .leading, spacing: 16) {
             /// Have to update Info -> Custom iOS Target Propperties
             /// To add "App Transport Security Settings" > "Allow Arbitrary Loads" = "YES"
-            AsyncImage(url: article.imageURL) { phase in
-                switch phase {
-                    case .empty:
-                        HStack {
-                            Spacer()
-                            ProgressView()
-                            Spacer()
-                        }
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                    case .failure:
-                        HStack {
-                            Spacer()
-                            Image(systemName: "photo")
-                            Spacer()
-                        }
-                    default:
-                        fatalError()
-                }
-            }
-            #if os(iOS)
-            .asyncImageFrame(horizontalSizeClass: horizontalSizeClass!)
-            #elseif os(macOS)
-            .frame(height: 180)
-            #endif
-            .background(.gray.opacity(0.6))
-            .clipped()
+            asyncImage
             
             VStack(alignment: .leading, spacing: 0) {
                 Text(article.title)
@@ -165,6 +139,89 @@ struct ArticleRowView: View {
         }
     }
     #endif
+    
+    #if os(watchOS)
+    private var watchContentView: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                asyncImage
+                Text(article.title)
+                    .lineLimit(3)
+                    .font(.headline)
+                    .foregroundColor(.primary)
+            }
+            
+            Text(article.descriptionText)
+                .lineLimit(2)
+                .font(.caption2)
+                .foregroundColor(.secondary)
+            
+            HStack {
+                if articleBookmarkVM.isBookmarked(for: article) {
+                    Image(systemName: "bookmark.fill")
+                }
+                
+                Text(article.captionText)
+                    .font(.footnote)
+                    .lineLimit(2)
+                    .foregroundStyle(.tertiary)
+            }
+        }
+        .padding(.vertical)
+        .swipeActions {
+            if articleBookmarkVM.isBookmarked(for: article) {
+                Button(role: .destructive, action: {
+                    articleBookmarkVM.removeBookmark(for: article)
+                }, label: {
+                    Label("Remove Bookmark", systemImage: "bookmark")
+                })
+            } else {
+                Button(action: {
+                    articleBookmarkVM.addBookmark(for: article)
+                }, label: {
+                    Label("Bookmark", systemImage: "bookmark.fill")
+                })
+            }
+        }
+    }
+    #endif
+    
+    private var asyncImage: some View {
+        AsyncImage(url: article.imageURL) { phase in
+            switch phase {
+                case .empty:
+                    HStack {
+                        Spacer()
+                        ProgressView()
+                        Spacer()
+                    }
+                case .success(let image):
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                case .failure:
+                    HStack {
+                        Spacer()
+                        Image(systemName: "photo")
+                        Spacer()
+                    }
+                default:
+                    fatalError()
+            }
+        }
+        #if os(iOS)
+        .asyncImageFrame(horizontalSizeClass: horizontalSizeClass!)
+        #elseif os(macOS)
+        .frame(height: 180)
+        #elseif os(watchOS)
+        .frame(maxWidth: 40, maxHeight: 70)
+        #endif
+        .background(.gray.opacity(0.6))
+        #if os(watchOS)
+        .cornerRadius(4)
+        #endif
+        .clipped()
+    }
 }
 
 extension View {

@@ -9,7 +9,7 @@ import Foundation
 
 fileprivate let relativeDateFormatter = RelativeDateTimeFormatter()
 
-struct Article {
+struct Article: Hashable {
     let source: Source
     
     let title: String
@@ -47,6 +47,10 @@ struct Article {
         }
         return URL(string: urlToImage)
     }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(title)
+    }
 }
 
 extension Article: Codable {}
@@ -54,6 +58,7 @@ extension Article: Equatable {}
 extension Article: Identifiable {
     var id: String { url }
 }
+
 extension Article {
     static var previewData: [Article]? {
         // Must include news.json in Project Settings -> Build Phases -> Copy Bundle Resources -> Add your json file

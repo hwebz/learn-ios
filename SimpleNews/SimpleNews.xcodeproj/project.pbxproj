@@ -55,6 +55,11 @@
 		0DC216562AD514B200E9E821 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8465C72AD128B200E1A043 /* Article.swift */; };
 		0DC216572AD514B200E9E821 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643D32AD1D73000F6BED6 /* NewsAPI.swift */; };
 		0DC216582AD514B200E9E821 /* NewsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8465C92AD12D5800E1A043 /* NewsAPIResponse.swift */; };
+		0DC216592AD51A2F00E9E821 /* RetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643DE2AD1E0FA00F6BED6 /* RetryView.swift */; };
+		0DC2165A2AD51A2F00E9E821 /* NewsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643DA2AD1DDCA00F6BED6 /* NewsTabView.swift */; };
+		0DC2165B2AD51A2F00E9E821 /* ArticleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8465CC2AD1CA3200E1A043 /* ArticleRowView.swift */; };
+		0DC2165C2AD51A2F00E9E821 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643CE2AD1D37D00F6BED6 /* ArticleListView.swift */; };
+		0DC2165D2AD51A2F00E9E821 /* EmptyPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643DC2AD1E09C00F6BED6 /* EmptyPlaceholderView.swift */; };
 		0DD643CA2AD1CD9B00F6BED6 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D8465C52AD1286000E1A043 /* news.json */; };
 		0DD643CF2AD1D37D00F6BED6 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643CE2AD1D37D00F6BED6 /* ArticleListView.swift */; };
 		0DD643D12AD1D46E00F6BED6 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643D02AD1D46E00F6BED6 /* SafariView.swift */; };
@@ -119,13 +124,14 @@
 		0D8465C72AD128B200E1A043 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		0D8465C92AD12D5800E1A043 /* NewsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIResponse.swift; sourceTree = "<group>"; };
 		0D8465CC2AD1CA3200E1A043 /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
-		0DC216342AD510D300E9E821 /* SearchTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabView.swift; sourceTree = "<group>"; };
+		0DC216342AD510D300E9E821 /* SearchTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchTabView.swift; path = ../../SimpleNews/Views/SearchTabView.swift; sourceTree = "<group>"; };
 		0DC216362AD510FD00E9E821 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0DC2163D2AD5141C00E9E821 /* SimpleNewsWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SimpleNewsWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DC2163F2AD5141C00E9E821 /* SimpleNewsWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNewsWatchApp.swift; sourceTree = "<group>"; };
 		0DC216412AD5141C00E9E821 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0DC216432AD5141D00E9E821 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DC216462AD5141D00E9E821 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0DC2165E2AD5237200E9E821 /* SimpleNewsWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SimpleNewsWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0DD643CB2AD1D02D00F6BED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0DD643CE2AD1D37D00F6BED6 /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 		0DD643D02AD1D46E00F6BED6 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
@@ -255,6 +261,7 @@
 				0DD643DC2AD1E09C00F6BED6 /* EmptyPlaceholderView.swift */,
 				0DD643DE2AD1E0FA00F6BED6 /* RetryView.swift */,
 				0DD643E22AD1ED9F00F6BED6 /* BoookMarkTabView.swift */,
+				0DC216342AD510D300E9E821 /* SearchTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,7 +324,6 @@
 				0DD643EA2AD28E9200F6BED6 /* SearchHistoryListView.swift */,
 				0DD643EE2AD31ECB00F6BED6 /* TabContentView.swift */,
 				0DD643F02AD31EEA00F6BED6 /* SidebarContentView.swift */,
-				0DC216342AD510D300E9E821 /* SearchTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -325,6 +331,7 @@
 		0DC2163E2AD5141C00E9E821 /* SimpleNewsWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				0DC2165E2AD5237200E9E821 /* SimpleNewsWatch-Watch-App-Info.plist */,
 				0DC2163F2AD5141C00E9E821 /* SimpleNewsWatchApp.swift */,
 				0DC216412AD5141C00E9E821 /* ContentView.swift */,
 				0DC216432AD5141D00E9E821 /* Assets.xcassets */,
@@ -536,11 +543,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DC216422AD5141C00E9E821 /* ContentView.swift in Sources */,
+				0DC2165C2AD51A2F00E9E821 /* ArticleListView.swift in Sources */,
+				0DC2165D2AD51A2F00E9E821 /* EmptyPlaceholderView.swift in Sources */,
 				0DC216582AD514B200E9E821 /* NewsAPIResponse.swift in Sources */,
+				0DC2165A2AD51A2F00E9E821 /* NewsTabView.swift in Sources */,
 				0DC216502AD514B200E9E821 /* DataStore.swift in Sources */,
+				0DC216592AD51A2F00E9E821 /* RetryView.swift in Sources */,
 				0DC216562AD514B200E9E821 /* Article.swift in Sources */,
 				0DC216552AD514B200E9E821 /* ArticleNewsViewModel.swift in Sources */,
 				0DC216542AD514B200E9E821 /* ArticleSearchViewModel.swift in Sources */,
+				0DC2165B2AD51A2F00E9E821 /* ArticleRowView.swift in Sources */,
 				0DC216402AD5141C00E9E821 /* SimpleNewsWatchApp.swift in Sources */,
 				0DC2164F2AD514B200E9E821 /* ArticleBookmarkViewModel.swift in Sources */,
 				0DC216572AD514B200E9E821 /* NewsAPI.swift in Sources */,
@@ -811,6 +823,7 @@
 				DEVELOPMENT_TEAM = 9K7Y8T69T3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SimpleNewsWatch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = SimpleNewsWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hado.SimpleNews;
@@ -841,6 +854,7 @@
 				DEVELOPMENT_TEAM = 9K7Y8T69T3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SimpleNewsWatch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = SimpleNewsWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hado.SimpleNews;

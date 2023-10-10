@@ -55,7 +55,7 @@ struct ContentView: View {
             case .search:
                 Text("Search")
             case .category(let category):
-                Text("Category: \(category.rawValue)")
+                NewsTabView(category: category)
         }
     }
     
