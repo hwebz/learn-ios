@@ -78,6 +78,11 @@ struct ArticleDetailView: View {
                     .foregroundStyle(.tertiary)
             }
         }
+        .userActivity(activityTypeViewKey, element: article) { article, userActivity in
+            userActivity.isEligibleForHandoff = true
+            userActivity.requiredUserInfoKeys = [activityURLKey]
+            userActivity.addUserInfoEntries(from: [activityURLKey: article.articleURL])
+        }
     }
 }
 

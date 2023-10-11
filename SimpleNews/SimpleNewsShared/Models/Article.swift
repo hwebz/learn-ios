@@ -9,6 +9,9 @@ import Foundation
 
 fileprivate let relativeDateFormatter = RelativeDateTimeFormatter()
 
+let activityTypeViewKey = "com.hado.SimpleNews.view"
+let activityURLKey = "SimpleNews.url.key"
+
 struct Article: Hashable {
     let source: Source
     
