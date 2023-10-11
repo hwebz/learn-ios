@@ -135,6 +135,8 @@
 ### Simple News (newsapi.org API)
 > /SimpleNews
 
+> https://github.com/alfianlosari/NewsAppSwiftUI
+
 #### Screenshots
 <div class="flex">
     <img src="./screenshots/simple-news.png" width="200" />

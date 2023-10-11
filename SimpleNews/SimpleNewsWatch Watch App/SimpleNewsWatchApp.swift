@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import WatchKit
 
 @main
 struct SimpleNewsWatch_Watch_AppApp: App {
     
+    @WKExtensionDelegateAdaptor(ExtensionDelegate.self) private var extensionDelegate
     @StateObject private var bookmarkVM: ArticleBookmarkViewModel = ArticleBookmarkViewModel.shared
     @StateObject private var searchVM: ArticleSearchViewModel = ArticleSearchViewModel.shared
     @StateObject private var connectivityVM = WatchConnectivityViewModel.shared

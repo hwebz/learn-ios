@@ -11,16 +11,7 @@ struct ContentView: View {
     
     @State private var selectedMenuItemId: MenuItem.ID?
     @EnvironmentObject private var searchVM: ArticleSearchViewModel
-    
-    private var selection: Binding<MenuItem.ID?> {
-        Binding {
-            selectedMenuItemId ?? MenuItem.category(.general).id
-        } set: { newValue in
-            if let newValue = newValue {
-                selectedMenuItemId = newValue
-            }
-        }
-    }
+    @State private var complicationArticle: Article?
     
     var body: some View {
         ZStack {
@@ -44,11 +35,27 @@ struct ContentView: View {
                 } header: {
                     Text("Categories")
                 }
+                
+                Section {
+                    navigationLinkForMenuItem(.settings) {
+                        Label(MenuItem.settings.text, systemImage: MenuItem.settings.systemImage)
+                    }
+                }
             }
+        }
+        .sheet(item: $complicationArticle) {
+            ArticleDetailView(article: $0)
         }
         .searchable(text: $searchVM.searchQuery)
         .onSubmit(of: .search, search)
         .navigationTitle("XCA News")
+        .onReceive(NotificationCenter.default.publisher(for: .articleSent, object: nil)) { notification in
+            guard let article = notification.userInfo?["article"] as? Article else {
+                return
+            }
+            
+            complicationArticle = article
+        }
     }
     
     @ViewBuilder
@@ -63,6 +70,8 @@ struct ContentView: View {
                     }
             case .category(let category):
                 NewsTabView(category: category)
+            case .settings:
+                SettingsView()
         }
     }
     
