@@ -26,6 +26,8 @@ struct ArticleListView: View {
             .sheet(item: $selectedArticleURL) {
                 SafariView(url: $0)
                     .edgesIgnoringSafeArea(.bottom)
+                    // This one to force reload the safari view in case of new URL sent to the iPhone
+                    // during Safari still open old URL
                     .id($0)
             }
             .onReceive(NotificationCenter.default.publisher(for: .articleSent, object: nil)) { notification in
