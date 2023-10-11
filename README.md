@@ -137,13 +137,48 @@
 
 > https://github.com/alfianlosari/NewsAppSwiftUI
 
-#### Screenshots
+#### Screenshots (iPhone)
 <div class="flex">
     <img src="./screenshots/simple-news.png" width="200" />
     <img src="./screenshots/simple-news-1.png" width="200" />
     <img src="./screenshots/simple-news-2.png" width="200" />
     <img src="./screenshots/simple-news-3.png" width="200" />
     <img src="./screenshots/simple-news-4.png" width="200" />
+</div>
+
+#### Screenshots (Apple Watch)
+<div class="flex">
+    <img src="./screenshots/simple-news-watch.png" width="200" />
+    <img src="./screenshots/simple-news-watch-1.png" width="200" />
+    <img src="./screenshots/simple-news-watch-2.png" width="200" />
+    <img src="./screenshots/simple-news-watch-3.png" width="200" />
+    <img src="./screenshots/simple-news-watch-4.png" width="200" />
+    <img src="./screenshots/simple-news-watch-5.png" width="200" />
+    <img src="./screenshots/simple-news-watch-6.png" width="200" />
+    <img src="./screenshots/simple-news-watch-7.png" width="200" />
+    <img src="./screenshots/simple-news-watch-8.png" width="200" />
+    <img src="./screenshots/simple-news-watch-9.png" width="200" />
+    <img src="./screenshots/simple-news-watch-10.png" width="200" />
+</div>
+
+#### Screenshots (iPad)
+<div class="flex">
+    <img src="./screenshots/simple-news-ipad.png" width="200" />
+    <img src="./screenshots/simple-news-ipad-1.png" width="200" />
+    <img src="./screenshots/simple-news-ipad-2.png" width="200" />
+    <img src="./screenshots/simple-news-ipad-3.png" width="200" />
+    <img src="./screenshots/simple-news-ipad-4.png" width="200" />
+    <img src="./screenshots/simple-news-ipad-5.png" width="200" />
+    <img src="./screenshots/simple-news-ipad-6.png" width="200" />
+</div>
+
+#### Screenshots (MacOS)
+<div class="flex">
+    <img src="./screenshots/simple-news-mac.png" width="200" />
+    <img src="./screenshots/simple-news-mac-2.png" width="200" />
+    <img src="./screenshots/simple-news-mac-3.png" width="200" />
+    <img src="./screenshots/simple-news-mac-4.png" width="200" />
+    <img src="./screenshots/simple-news-mac-5.png" width="200" />
 </div>
 
 ### Badge Buttons

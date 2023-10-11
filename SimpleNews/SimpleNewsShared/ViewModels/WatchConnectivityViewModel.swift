@@ -4,7 +4,7 @@
 //
 //  Created by Personal on 10/10/2023.
 //
-
+#if os(watchOS) || os(iOS)
 import SwiftUI
 import WatchConnectivity
 
@@ -121,3 +121,5 @@ class WatchConnectivityViewModel: NSObject, ObservableObject, WCSessionDelegate 
 extension Notification.Name {
     static let articleSent = Notification.Name("ArticleSent")
 }
+
+#endif

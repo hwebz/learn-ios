@@ -51,7 +51,7 @@ struct SimpleNewsWatchWidgetEntryView : View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text(entry.date, style: .time)
+            Text("XCANews")
                 .font(.subheadline)
                 .fontWeight(.bold)
             Text("President Joe Biden come to Vietname to disucss more about political problems between 2 countries")
