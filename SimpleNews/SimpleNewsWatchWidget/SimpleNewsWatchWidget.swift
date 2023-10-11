@@ -50,7 +50,13 @@ struct SimpleNewsWatchWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        VStack(alignment: .leading) {
+            Text(entry.date, style: .time)
+                .font(.subheadline)
+                .fontWeight(.bold)
+            Text("President Joe Biden come to Vietname to disucss more about political problems between 2 countries")
+                .font(.caption2)
+        }
     }
 }
 
