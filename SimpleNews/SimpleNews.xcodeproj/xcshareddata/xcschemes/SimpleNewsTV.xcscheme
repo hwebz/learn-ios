@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0DD049052AD7254C005D10D9"
+               BlueprintIdentifier = "0DD049292AD7289B005D10D9"
                BuildableName = "SimpleNewsTV.app"
                BlueprintName = "SimpleNewsTV"
                ReferencedContainer = "container:SimpleNews.xcodeproj">
@@ -43,7 +43,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0DD049052AD7254C005D10D9"
+            BlueprintIdentifier = "0DD049292AD7289B005D10D9"
             BuildableName = "SimpleNewsTV.app"
             BlueprintName = "SimpleNewsTV"
             ReferencedContainer = "container:SimpleNews.xcodeproj">
@@ -60,21 +60,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0DD049052AD7254C005D10D9"
+            BlueprintIdentifier = "0DD049292AD7289B005D10D9"
             BuildableName = "SimpleNewsTV.app"
             BlueprintName = "SimpleNewsTV"
             ReferencedContainer = "container:SimpleNews.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0DD049052AD7254C005D10D9"
-            BuildableName = "SimpleNewsTV.app"
-            BlueprintName = "SimpleNewsTV"
-            ReferencedContainer = "container:SimpleNews.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

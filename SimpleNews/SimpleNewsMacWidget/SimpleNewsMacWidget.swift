@@ -15,7 +15,7 @@ struct SimpleNewsMacWidget: Widget {
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: SelectCategoryIntent.self, provider: ArticleProvider()) { entry in
-            Text("Placeholder")
+            ArticleEntryWidgetView(entry: entry)
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")

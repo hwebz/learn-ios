@@ -83,6 +83,7 @@ struct ArticleListView: View {
     }
     #endif
     
+    @ViewBuilder
     private func listRowView(for article: Article) -> some View {
 #if os(iOS)
         ArticleRowView(article: article)

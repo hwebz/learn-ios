@@ -6,9 +6,17 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 class AppDeletegate: NSObject, NSApplicationDelegate {
+    
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        WidgetCenter.shared.reloadAllTimelines()
+    }
+    
     func application(_ application: NSApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([NSUserActivityRestoring]) -> Void) -> Bool {
+        
+        
         if let urlString = userActivity.userInfo?[activityURLKey] as? String,
            let url = URL(string: urlString) {
             NSWorkspace.shared.open(url)

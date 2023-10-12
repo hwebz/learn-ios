@@ -189,6 +189,28 @@
     <img src="./screenshots/simple-news-tv-3.png" width="200" />
 </div>
 
+#### Screenshots (iOS Widget)
+<div class="flex">
+    <img src="./screenshots/simple-news-widget-ios.png" width="200" />
+    <img src="./screenshots/simple-news-widget-ios-1.png" width="200" />
+    <img src="./screenshots/simple-news-widget-ios-2.png" width="200" />
+    <img src="./screenshots/simple-news-widget-ios-3.png" width="200" />
+    <img src="./screenshots/simple-news-widget-ios-4.png" width="200" />
+    <img src="./screenshots/simple-news-widget-ipad.png" width="200" />
+    <img src="./screenshots/simple-news-widget-ipad-2.png" width="200" />
+    <img src="./screenshots/simple-news-widget-ipad-3.png" width="200" />
+    <img src="./screenshots/simple-news-widget-ipad-4.png" width="200" />
+    <img src="./screenshots/simple-news-widget-ipad-5.png" width="200" />
+</div>
+
+#### Screenshots (MacOS Widget)
+<div class="flex">
+    <img src="./screenshots/simple-news-widget-mac.png" width="200" />
+    <img src="./screenshots/simple-news-widget-mac-2.png" width="200" />
+    <img src="./screenshots/simple-news-widget-mac-3.png" width="200" />
+    <img src="./screenshots/simple-news-widget-mac-4.png" width="200" />
+</div>
+
 ### Badge Buttons
 > /ButtonWithBadge
 
