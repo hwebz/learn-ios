@@ -142,7 +142,7 @@ struct NewsTabView_Previews: PreviewProvider {
     @StateObject static var articleBookmarkVM = ArticleBookmarkViewModel.shared
     
     static var previews: some View {
-        NewsTabView(articles: Article.previewData!)
+        NewsTabView(articles: Article.previewData)
             .environmentObject(articleBookmarkVM)
     }
 }

@@ -73,7 +73,7 @@ struct ArticleItemView: View {
 
 struct ArticleItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleItemView(article: Article.previewData![2])
+        ArticleItemView(article: Article.previewData[2])
             .frame(width: 400, height: 400)
             .environmentObject(ArticleBookmarkViewModel.shared)
     }

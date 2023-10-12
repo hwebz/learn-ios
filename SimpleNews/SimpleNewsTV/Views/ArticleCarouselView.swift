@@ -24,7 +24,7 @@ struct ArticleCarouselView: View {
                 LazyHStack(spacing: 32) {
                     ForEach(articles) { article in
                         NavigationLink {
-                            Text(article.title)
+                            ArticleDetailView(article: article)
                         } label: {
                             ArticleItemView(article: article)
                                 .frame(width: 420, height: 420)

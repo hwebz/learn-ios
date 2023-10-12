@@ -266,7 +266,7 @@ struct ArticleRowView_Previews: PreviewProvider {
         /// Must include news.json in Project Settings -> Build Phases -> Copy Bundle Resources -> Add your json file
         NavigationView {
             List {
-                ArticleRowView(article: .previewData![0])
+                ArticleRowView(article: .previewData[0])
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
             }
         }

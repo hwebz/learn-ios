@@ -88,7 +88,7 @@ struct ArticleDetailView: View {
 
 struct ArticleDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleDetailView(article: Article.previewData![2])
+        ArticleDetailView(article: Article.previewData[2])
             .environmentObject(ArticleBookmarkViewModel.shared)
             .environmentObject(WatchConnectivityViewModel.shared)
     }

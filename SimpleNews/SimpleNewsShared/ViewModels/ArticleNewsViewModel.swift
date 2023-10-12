@@ -66,7 +66,7 @@ class ArticleNewsViewModel: ObservableObject {
 //    }
     func loadArticles() async {
         // JSON data
-//        phase = .success(Article.previewData!)
+//        phase = .success(Article.previewData)
         if Task.isCancelled { return }
         phase = .empty
         do {
