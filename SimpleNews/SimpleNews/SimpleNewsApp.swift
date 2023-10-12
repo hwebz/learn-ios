@@ -39,11 +39,46 @@ struct SimpleNewsApp: App {
     @StateObject private var articleBookmarkVM = ArticleBookmarkViewModel.shared
     @StateObject private var connectivityVM = WatchConnectivityViewModel.shared
     
+    @State var selectedArticleURL: URL? = nil
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.selectedArticleURL, $selectedArticleURL)
                 .environmentObject(articleBookmarkVM)
                 .environmentObject(connectivityVM)
+                .onReceive(NotificationCenter.default.publisher(for: .articleSent), perform: handleOnReceiveNitification)
+                .onContinueUserActivity(activityTypeViewKey, perform: handleOnContinueUserActivity)
+                .onOpenURL { selectedArticleURL = $0 }
+                .sheet(item: $selectedArticleURL) {
+                    SafariView(url: $0)
+                        .edgesIgnoringSafeArea(.bottom)
+                        .id($0)
+                }
         }
+    }
+    
+    private func handleOnReceiveNitification(_ notification: Notification) {
+        if let url = notification.userInfo?["url"] as? URL {
+            selectedArticleURL = url
+        }
+    }
+    
+    private func handleOnContinueUserActivity(_ userActivity: NSUserActivity) {
+        if let urlString = userActivity.userInfo?[activityURLKey] as? String,
+           let url = URL(string: urlString) {
+            selectedArticleURL = url
+        }
+    }
+}
+
+struct SelectedArticleListURLKey: EnvironmentKey {
+    static var defaultValue: Binding<URL?> = .constant(nil)
+}
+
+extension EnvironmentValues {
+    var selectedArticleURL: Binding<URL?> {
+        get { self[SelectedArticleListURLKey.self] }
+        set { self[SelectedArticleListURLKey.self] = newValue }
     }
 }

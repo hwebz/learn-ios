@@ -23,6 +23,13 @@ class AppDeletegate: NSObject, NSApplicationDelegate {
         }
         return true
     }
+    
+    // Open link from Widget on web browser
+    func application(_ application: NSApplication, open urls: [URL]) {
+        if let url = urls.first {
+            NSWorkspace.shared.open(url)
+        }
+    }
 }
 
 @main
@@ -38,7 +45,9 @@ struct SimpleNewsMacApp: App {
                 .environmentObject(bookmarkVM)
                 .environmentObject(searchVM)
         }
+        .handlesExternalEvents(matching: [])
         .commands {
+            CommandGroup(replacing: CommandGroupPlacement.newItem) {}
             SidebarCommands()
             NewsCommands()
         }

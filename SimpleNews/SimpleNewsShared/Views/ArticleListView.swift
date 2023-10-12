@@ -11,7 +11,8 @@ struct ArticleListView: View {
     
     #if os(iOS)
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @State private var selectedArticleURL: URL?
+    @Environment(\.selectedArticleURL) private var selectedArticleURL
+//    @State private var selectedArticleURL: URL?
     #elseif os(macOS)
     @Environment(\.colorScheme) private var colorScheme
     #endif
@@ -23,29 +24,30 @@ struct ArticleListView: View {
     
     var body: some View {
         rootView
-        #if os(iOS)
-//            .sheet(item: $selectedArticle) {
-//                SafariView(url: $0.articleURL)
-            .sheet(item: $selectedArticleURL) {
-                SafariView(url: $0)
-                    .edgesIgnoringSafeArea(.bottom)
-                    // This one to force reload the safari view in case of new URL sent to the iPhone
-                    // during Safari still open old URL
-                    .id($0)
-            }
-            .onReceive(NotificationCenter.default.publisher(for: .articleSent, object: nil)) { notification in
-                if let url = notification.userInfo?["url"] as? URL, url != selectedArticleURL {
-                    selectedArticleURL = url
-                }
-            }
-            .onContinueUserActivity(activityTypeViewKey) { userActivity in
-                if let urlString = userActivity.userInfo?[activityURLKey] as? String,
-                   let url = URL(string: urlString),
-                   url != selectedArticleURL {
-                    selectedArticleURL = url
-                }
-            }
-        #endif
+        // We handled this one inside SimpleNewsApp.swift already
+//        #if os(iOS)
+////            .sheet(item: $selectedArticle) {
+////                SafariView(url: $0.articleURL)
+//            .sheet(item: $selectedArticleURL) {
+//                SafariView(url: $0)
+//                    .edgesIgnoringSafeArea(.bottom)
+//                    // This one to force reload the safari view in case of new URL sent to the iPhone
+//                    // during Safari still open old URL
+//                    .id($0)
+//            }
+//            .onReceive(NotificationCenter.default.publisher(for: .articleSent, object: nil)) { notification in
+//                if let url = notification.userInfo?["url"] as? URL, url != selectedArticleURL {
+//                    selectedArticleURL = url
+//                }
+//            }
+//            .onContinueUserActivity(activityTypeViewKey) { userActivity in
+//                if let urlString = userActivity.userInfo?[activityURLKey] as? String,
+//                   let url = URL(string: urlString),
+//                   url != selectedArticleURL {
+//                    selectedArticleURL = url
+//                }
+//            }
+//        #endif
     }
     
     @ViewBuilder
@@ -89,7 +91,7 @@ struct ArticleListView: View {
         ArticleRowView(article: article)
             .onTapGesture {
                 //                        selectedArticle = article
-                selectedArticleURL = article.articleURL
+                selectedArticleURL.wrappedValue = article.articleURL
             }
 #elseif os(watchOS)
         NavigationLink(destination: {
@@ -173,7 +175,7 @@ struct ArticleListView: View {
     private func handleOnTapGesture(article: Article) {
         #if os(iOS)
 //            self.selectedArticle = article
-            self.selectedArticleURL = article.articleURL
+        self.selectedArticleURL.wrappedValue = article.articleURL
         #elseif os(macOS)
             NSWorkspace.shared.open(article.articleURL)
         #endif
