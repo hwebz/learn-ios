@@ -22,3 +22,5 @@ final class CacheEntry<V> {
         date > expiredTimestamp
     }
 }
+
+extension CacheEntry: Codable where V: Codable {}

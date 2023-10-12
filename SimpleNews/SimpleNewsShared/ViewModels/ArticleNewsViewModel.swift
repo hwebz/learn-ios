@@ -30,7 +30,10 @@ class ArticleNewsViewModel: ObservableObject {
         }
     }
     @AppStorage("item_selection") private var selectedMenuItemId: MenuItem.ID?
-    private let cache = InMemoryCache<[Article]>(expirationInterval: 2 * 60)
+    // Cache in memory
+//    private let cache = InMemoryCache<[Article]>(expirationInterval: 2 * 60)
+    // Cache in disk
+    private let cache = DiskCache<[Article]>(filename: "simple_news_articles", expirationInterval: 3 * 60)
     
     private let newsAPI = NewsAPI.shared
     
@@ -48,6 +51,11 @@ class ArticleNewsViewModel: ObservableObject {
         
 //        self.selectedCategory = selectedCategory
         self.fetchTaskToken = FetchTaskToken(category: selectedCategory, token: Date())
+        
+        // Only need if used disk cache
+        Task(priority: .userInitiated) {
+            try? await cache.loadFromDisk()
+        }
     }
 
 // For testing .failure() case
@@ -90,6 +98,10 @@ class ArticleNewsViewModel: ObservableObject {
             let articles = try await newsAPI.fetch(from: fetchTaskToken.category)
             if Task.isCancelled { return }
             await cache.setValue(articles, for: category.rawValue)
+            
+            // Only need if used Disk cache
+            try? await cache.saveToDisk()
+            
             print("CACHE: Set articles for category: \(category.rawValue)")
             phase = .success(articles)
         } catch {
