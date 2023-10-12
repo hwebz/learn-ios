@@ -9,6 +9,8 @@
 	</dict>
 	<key>NSUserActivityTypes</key>
 	<array>
+		<string>ConfigurationIntent</string>
+		<string>SelectCategoryIntent</string>
 		<string>com.hado.SimpleNews.view</string>
 	</array>
 </dict>

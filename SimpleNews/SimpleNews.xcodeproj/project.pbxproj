@@ -130,20 +130,35 @@
 		0DD049742AD7FD93005D10D9 /* PagingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD049702AD7FD93005D10D9 /* PagingData.swift */; };
 		0DD0497A2AD83375005D10D9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC216782AD673CC00E9E821 /* WidgetKit.framework */; };
 		0DD0497B2AD83375005D10D9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC2167A2AD673CC00E9E821 /* SwiftUI.framework */; };
-		0DD0497E2AD83375005D10D9 /* SimpleNewsiOSWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD0497D2AD83375005D10D9 /* SimpleNewsiOSWidgetBundle.swift */; };
-		0DD049802AD83375005D10D9 /* SimpleNewsiOSWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD0497F2AD83375005D10D9 /* SimpleNewsiOSWidgetLiveActivity.swift */; };
 		0DD049822AD83375005D10D9 /* SimpleNewsiOSWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD049812AD83375005D10D9 /* SimpleNewsiOSWidget.swift */; };
 		0DD049852AD83375005D10D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DD049842AD83375005D10D9 /* Assets.xcassets */; };
-		0DD049872AD83375005D10D9 /* SimpleNewsiOSWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0DD049832AD83375005D10D9 /* SimpleNewsiOSWidget.intentdefinition */; };
-		0DD049882AD83375005D10D9 /* SimpleNewsiOSWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0DD049832AD83375005D10D9 /* SimpleNewsiOSWidget.intentdefinition */; };
+		0DD049872AD83375005D10D9 /* SimpleNewsWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0DD049832AD83375005D10D9 /* SimpleNewsWidget.intentdefinition */; };
+		0DD049882AD83375005D10D9 /* SimpleNewsWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0DD049832AD83375005D10D9 /* SimpleNewsWidget.intentdefinition */; };
 		0DD0498B2AD83375005D10D9 /* SimpleNewsiOSWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0DD049792AD83374005D10D9 /* SimpleNewsiOSWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0DD049952AD8338E005D10D9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC216782AD673CC00E9E821 /* WidgetKit.framework */; };
 		0DD049962AD8338E005D10D9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC2167A2AD673CC00E9E821 /* SwiftUI.framework */; };
 		0DD049992AD8338E005D10D9 /* SimpleNewsMacWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD049982AD8338E005D10D9 /* SimpleNewsMacWidget.swift */; };
 		0DD0499C2AD8338F005D10D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DD0499B2AD8338F005D10D9 /* Assets.xcassets */; };
-		0DD0499F2AD8338F005D10D9 /* SimpleNewsMacWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0DD0499A2AD8338E005D10D9 /* SimpleNewsMacWidget.intentdefinition */; };
-		0DD049A02AD8338F005D10D9 /* SimpleNewsMacWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0DD0499A2AD8338E005D10D9 /* SimpleNewsMacWidget.intentdefinition */; };
 		0DD049A32AD8338F005D10D9 /* SimpleNewsMacWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0DD049942AD8338E005D10D9 /* SimpleNewsMacWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0DD049A82AD833F5005D10D9 /* NewsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8465C92AD12D5800E1A043 /* NewsAPIResponse.swift */; };
+		0DD049A92AD833F5005D10D9 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D8465C52AD1286000E1A043 /* news.json */; };
+		0DD049AA2AD833F5005D10D9 /* CategoryArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD0494A2AD72DDC005D10D9 /* CategoryArticles.swift */; };
+		0DD049AB2AD833F5005D10D9 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8465C72AD128B200E1A043 /* Article.swift */; };
+		0DD049AC2AD833F5005D10D9 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643D32AD1D73000F6BED6 /* NewsAPI.swift */; };
+		0DD049AD2AD833F5005D10D9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643D52AD1D7A400F6BED6 /* Category.swift */; };
+		0DD049AE2AD833F6005D10D9 /* NewsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8465C92AD12D5800E1A043 /* NewsAPIResponse.swift */; };
+		0DD049AF2AD833F6005D10D9 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D8465C52AD1286000E1A043 /* news.json */; };
+		0DD049B02AD833F6005D10D9 /* CategoryArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD0494A2AD72DDC005D10D9 /* CategoryArticles.swift */; };
+		0DD049B12AD833F6005D10D9 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8465C72AD128B200E1A043 /* Article.swift */; };
+		0DD049B22AD833F6005D10D9 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643D32AD1D73000F6BED6 /* NewsAPI.swift */; };
+		0DD049B32AD833F6005D10D9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643D52AD1D7A400F6BED6 /* Category.swift */; };
+		0DD049B52AD834F1005D10D9 /* SimpleNewsWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0DD049832AD83375005D10D9 /* SimpleNewsWidget.intentdefinition */; };
+		0DD049B82AD83686005D10D9 /* ArticleWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD049B72AD83686005D10D9 /* ArticleWidgetModel.swift */; };
+		0DD049B92AD83686005D10D9 /* ArticleWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD049B72AD83686005D10D9 /* ArticleWidgetModel.swift */; };
+		0DD049BB2AD83882005D10D9 /* ArticleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD049BA2AD83882005D10D9 /* ArticleEntry.swift */; };
+		0DD049BC2AD83882005D10D9 /* ArticleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD049BA2AD83882005D10D9 /* ArticleEntry.swift */; };
+		0DD049BE2AD838FF005D10D9 /* Category+Intent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD049BD2AD838FF005D10D9 /* Category+Intent.swift */; };
+		0DD049BF2AD838FF005D10D9 /* Category+Intent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD049BD2AD838FF005D10D9 /* Category+Intent.swift */; };
 		0DD643CA2AD1CD9B00F6BED6 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D8465C52AD1286000E1A043 /* news.json */; };
 		0DD643CF2AD1D37D00F6BED6 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643CE2AD1D37D00F6BED6 /* ArticleListView.swift */; };
 		0DD643D12AD1D46E00F6BED6 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD643D02AD1D46E00F6BED6 /* SafariView.swift */; };
@@ -302,18 +317,18 @@
 		0DD0496B2AD7F7E8005D10D9 /* KeysTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysTracker.swift; sourceTree = "<group>"; };
 		0DD049702AD7FD93005D10D9 /* PagingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingData.swift; sourceTree = "<group>"; };
 		0DD049792AD83374005D10D9 /* SimpleNewsiOSWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SimpleNewsiOSWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DD0497D2AD83375005D10D9 /* SimpleNewsiOSWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNewsiOSWidgetBundle.swift; sourceTree = "<group>"; };
-		0DD0497F2AD83375005D10D9 /* SimpleNewsiOSWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNewsiOSWidgetLiveActivity.swift; sourceTree = "<group>"; };
 		0DD049812AD83375005D10D9 /* SimpleNewsiOSWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNewsiOSWidget.swift; sourceTree = "<group>"; };
-		0DD049832AD83375005D10D9 /* SimpleNewsiOSWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = SimpleNewsiOSWidget.intentdefinition; sourceTree = "<group>"; };
+		0DD049832AD83375005D10D9 /* SimpleNewsWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = SimpleNewsWidget.intentdefinition; sourceTree = "<group>"; };
 		0DD049842AD83375005D10D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DD049862AD83375005D10D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DD049942AD8338E005D10D9 /* SimpleNewsMacWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SimpleNewsMacWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD049982AD8338E005D10D9 /* SimpleNewsMacWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNewsMacWidget.swift; sourceTree = "<group>"; };
-		0DD0499A2AD8338E005D10D9 /* SimpleNewsMacWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = SimpleNewsMacWidget.intentdefinition; sourceTree = "<group>"; };
 		0DD0499B2AD8338F005D10D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DD0499D2AD8338F005D10D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DD0499E2AD8338F005D10D9 /* SimpleNewsMacWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleNewsMacWidget.entitlements; sourceTree = "<group>"; };
+		0DD049B72AD83686005D10D9 /* ArticleWidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWidgetModel.swift; sourceTree = "<group>"; };
+		0DD049BA2AD83882005D10D9 /* ArticleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleEntry.swift; sourceTree = "<group>"; };
+		0DD049BD2AD838FF005D10D9 /* Category+Intent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Intent.swift"; sourceTree = "<group>"; };
 		0DD643CB2AD1D02D00F6BED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0DD643CE2AD1D37D00F6BED6 /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 		0DD643D02AD1D46E00F6BED6 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
@@ -490,6 +505,7 @@
 		0D8465AB2AD1283600E1A043 = {
 			isa = PBXGroup;
 			children = (
+				0DD049B42AD8347F005D10D9 /* SimpleNewsWidgetShared */,
 				0D2C20512AD46BC700D54E9F /* SimpleNewsShared */,
 				0D8465B62AD1283700E1A043 /* SimpleNews */,
 				0D2C20422AD46A3000D54E9F /* SimpleNewsMac */,
@@ -666,10 +682,7 @@
 		0DD0497C2AD83375005D10D9 /* SimpleNewsiOSWidget */ = {
 			isa = PBXGroup;
 			children = (
-				0DD0497D2AD83375005D10D9 /* SimpleNewsiOSWidgetBundle.swift */,
-				0DD0497F2AD83375005D10D9 /* SimpleNewsiOSWidgetLiveActivity.swift */,
 				0DD049812AD83375005D10D9 /* SimpleNewsiOSWidget.swift */,
-				0DD049832AD83375005D10D9 /* SimpleNewsiOSWidget.intentdefinition */,
 				0DD049842AD83375005D10D9 /* Assets.xcassets */,
 				0DD049862AD83375005D10D9 /* Info.plist */,
 			);
@@ -680,12 +693,30 @@
 			isa = PBXGroup;
 			children = (
 				0DD049982AD8338E005D10D9 /* SimpleNewsMacWidget.swift */,
-				0DD0499A2AD8338E005D10D9 /* SimpleNewsMacWidget.intentdefinition */,
 				0DD0499B2AD8338F005D10D9 /* Assets.xcassets */,
 				0DD0499D2AD8338F005D10D9 /* Info.plist */,
 				0DD0499E2AD8338F005D10D9 /* SimpleNewsMacWidget.entitlements */,
 			);
 			path = SimpleNewsMacWidget;
+			sourceTree = "<group>";
+		};
+		0DD049B42AD8347F005D10D9 /* SimpleNewsWidgetShared */ = {
+			isa = PBXGroup;
+			children = (
+				0DD049B62AD83675005D10D9 /* Models */,
+				0DD049832AD83375005D10D9 /* SimpleNewsWidget.intentdefinition */,
+			);
+			path = SimpleNewsWidgetShared;
+			sourceTree = "<group>";
+		};
+		0DD049B62AD83675005D10D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0DD049B72AD83686005D10D9 /* ArticleWidgetModel.swift */,
+				0DD049BA2AD83882005D10D9 /* ArticleEntry.swift */,
+				0DD049BD2AD838FF005D10D9 /* Category+Intent.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -928,6 +959,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DD049A92AD833F5005D10D9 /* news.json in Resources */,
 				0DD049852AD83375005D10D9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -936,6 +968,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DD049AF2AD833F6005D10D9 /* news.json in Resources */,
 				0DD0499C2AD8338F005D10D9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -956,7 +989,6 @@
 				0D2C20652AD471E300D54E9F /* RetryView.swift in Sources */,
 				0D2C20592AD46C4E00D54E9F /* DataStore.swift in Sources */,
 				0D2C20442AD46A3000D54E9F /* SimpleNewsMacApp.swift in Sources */,
-				0DD049A02AD8338F005D10D9 /* SimpleNewsMacWidget.intentdefinition in Sources */,
 				0DD0494D2AD72DE0005D10D9 /* CategoryArticles.swift in Sources */,
 				0DC216382AD5111E00E9E821 /* SearchTabView.swift in Sources */,
 				0D2C20672AD471E300D54E9F /* ArticleRowView.swift in Sources */,
@@ -1004,7 +1036,7 @@
 				0DD643EF2AD31ECB00F6BED6 /* TabContentView.swift in Sources */,
 				0DD643E32AD1ED9F00F6BED6 /* BookmarkTabView.swift in Sources */,
 				0DD643D92AD1DA3C00F6BED6 /* ArticleNewsViewModel.swift in Sources */,
-				0DD049882AD83375005D10D9 /* SimpleNewsiOSWidget.intentdefinition in Sources */,
+				0DD049882AD83375005D10D9 /* SimpleNewsWidget.intentdefinition in Sources */,
 				0DD0495D2AD7B8E4005D10D9 /* CacheEntry.swift in Sources */,
 				0DD643E12AD1E98B00F6BED6 /* ArticleBookmarkViewModel.swift in Sources */,
 				0DD643DB2AD1DDCA00F6BED6 /* NewsTabView.swift in Sources */,
@@ -1106,10 +1138,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DD049AB2AD833F5005D10D9 /* Article.swift in Sources */,
+				0DD049BE2AD838FF005D10D9 /* Category+Intent.swift in Sources */,
 				0DD049822AD83375005D10D9 /* SimpleNewsiOSWidget.swift in Sources */,
-				0DD0497E2AD83375005D10D9 /* SimpleNewsiOSWidgetBundle.swift in Sources */,
-				0DD049802AD83375005D10D9 /* SimpleNewsiOSWidgetLiveActivity.swift in Sources */,
-				0DD049872AD83375005D10D9 /* SimpleNewsiOSWidget.intentdefinition in Sources */,
+				0DD049AA2AD833F5005D10D9 /* CategoryArticles.swift in Sources */,
+				0DD049AD2AD833F5005D10D9 /* Category.swift in Sources */,
+				0DD049B82AD83686005D10D9 /* ArticleWidgetModel.swift in Sources */,
+				0DD049BB2AD83882005D10D9 /* ArticleEntry.swift in Sources */,
+				0DD049A82AD833F5005D10D9 /* NewsAPIResponse.swift in Sources */,
+				0DD049872AD83375005D10D9 /* SimpleNewsWidget.intentdefinition in Sources */,
+				0DD049AC2AD833F5005D10D9 /* NewsAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1117,8 +1155,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DD049AE2AD833F6005D10D9 /* NewsAPIResponse.swift in Sources */,
+				0DD049BF2AD838FF005D10D9 /* Category+Intent.swift in Sources */,
+				0DD049B52AD834F1005D10D9 /* SimpleNewsWidget.intentdefinition in Sources */,
 				0DD049992AD8338E005D10D9 /* SimpleNewsMacWidget.swift in Sources */,
-				0DD0499F2AD8338F005D10D9 /* SimpleNewsMacWidget.intentdefinition in Sources */,
+				0DD049B02AD833F6005D10D9 /* CategoryArticles.swift in Sources */,
+				0DD049B92AD83686005D10D9 /* ArticleWidgetModel.swift in Sources */,
+				0DD049BC2AD83882005D10D9 /* ArticleEntry.swift in Sources */,
+				0DD049B12AD833F6005D10D9 /* Article.swift in Sources */,
+				0DD049B22AD833F6005D10D9 /* NewsAPI.swift in Sources */,
+				0DD049B32AD833F6005D10D9 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

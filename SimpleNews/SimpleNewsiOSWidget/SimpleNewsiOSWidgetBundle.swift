@@ -12,6 +12,5 @@ import SwiftUI
 struct SimpleNewsiOSWidgetBundle: WidgetBundle {
     var body: some Widget {
         SimpleNewsiOSWidget()
-        SimpleNewsiOSWidgetLiveActivity()
     }
 }

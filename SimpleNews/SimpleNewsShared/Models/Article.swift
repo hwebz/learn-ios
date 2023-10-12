@@ -13,6 +13,9 @@ let activityTypeViewKey = "com.hado.SimpleNews.view"
 let activityURLKey = "SimpleNews.url.key"
 
 struct Article: Hashable {
+    // This id will be unique and auto generated from client side to avoid clashing of Identifiable in a List
+    // as NewsAPI response doesn't provide unique identifier
+    let id = UUID()
     let source: Source
     
     let title: String
@@ -58,9 +61,7 @@ struct Article: Hashable {
 
 extension Article: Codable {}
 extension Article: Equatable {}
-extension Article: Identifiable {
-    var id: String { url }
-}
+extension Article: Identifiable {}
 
 extension Article {
     static var previewData: [Article] {

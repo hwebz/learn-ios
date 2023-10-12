@@ -48,6 +48,7 @@ struct SimpleNewsiOSWidgetEntryView : View {
     }
 }
 
+@main
 struct SimpleNewsiOSWidget: Widget {
     let kind: String = "SimpleNewsiOSWidget"
 
