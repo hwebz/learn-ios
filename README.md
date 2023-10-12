@@ -181,6 +181,14 @@
     <img src="./screenshots/simple-news-mac-5.png" width="200" />
 </div>
 
+#### Screenshots (tvOS)
+<div class="flex">
+    <img src="./screenshots/simple-news-tv.png" width="200" />
+    <img src="./screenshots/simple-news-tv-1.png" width="200" />
+    <img src="./screenshots/simple-news-tv-2.png" width="200" />
+    <img src="./screenshots/simple-news-tv-3.png" width="200" />
+</div>
+
 ### Badge Buttons
 > /ButtonWithBadge
 
