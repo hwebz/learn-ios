@@ -74,8 +74,16 @@ struct ArticleListView: View {
     
     private var gridView: some View {
         ScrollView {
-            LazyVGrid(columns: gridItems) {
+            LazyVGrid(columns: gridItems, spacing: gridSpacing) {
                 ForEach(articles) { article in
+                    #if os(tvOS)
+                    NavigationLink {
+                        ArticleDetailView(article: article)
+                    } label: {
+                        ArticleItemView(article: article)
+                            .frame(width: 400, height: 400)
+                    }
+                    #else
                     ArticleRowView(article: article)
                         .onTapGesture {
                             handleOnTapGesture(article: article)
@@ -90,7 +98,7 @@ struct ArticleListView: View {
                         .mask(RoundedRectangle(cornerRadius: 8))
                         .shadow(radius: 4)
                         .padding(.bottom)
-                        
+                    #endif
                 }
             }
             .padding()
@@ -100,11 +108,21 @@ struct ArticleListView: View {
         #endif
     }
     
+    private gridSpacing: CGFloat? {
+        #if os(tvOS)
+        48
+        #else
+        nil
+        #endif
+    }
+    
     private var gridItems: [GridItem] {
         #if os(iOS)
         [GridItem(.adaptive(minimum: 300), spacing: 8)]
         #elseif os(macOS)
         [GridItem(.adaptive(minimum: 272, maximum: 272), spacing: 8)]
+        #elseif os(tvOS)
+        [GridItem(.adaptive(minimum: 400), spacing: 32)]
         #else
         []
         #endif
@@ -128,7 +146,7 @@ struct ArticleListView: View {
             default:
                 listView
         }
-        #elseif os(macOS)
+        #elseif os(macOS) || os(tvOS)
         gridView
         #elseif os(watchOS)
         listView

@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct SearchTabView: View {
-#if os(iOS)
-    @StateObject var searchVM = ArticleSearchViewModel.shared
+    #if os(iOS)
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-#elseif os(macOS) || os(watchOS)
+    #endif
+    
+    #if os(iOS) || os(tvOS)
+    @StateObject var searchVM = ArticleSearchViewModel.shared
+    #elseif os(macOS) || os(watchOS)
     @EnvironmentObject var searchVM: ArticleSearchViewModel
-#endif
+    #endif
     
     var shouldShowSuggestions: Bool {
         searchVM.searchQuery.isEmpty
@@ -32,6 +35,14 @@ struct SearchTabView: View {
                 }
             }
             .onSubmit(of: .search, search)
+        
+        #elseif os(tvOS)
+            .searchable(text: $searchVM.searchQuery)
+            .onChange(of: searchVM.searchQuery) { newSearchQuery in
+                if newSearchQuery.isEmpty {
+                    searchVM.phase = .empty
+                }
+            }
 #elseif os(macOS) || os(watchOS)
             .navigationTitle(searchVM.searchQuery.isEmpty ? "Search" : "Search results for \(searchVM.searchQuery)")
 #endif
@@ -60,6 +71,13 @@ struct SearchTabView: View {
                     }
                 } else {
                     EmptyPlaceholderView(text: "Type your query to search from NewsAPI", image: Image(systemName: "magnifyingglass"))
+                }
+                
+                #elseif os(tvOS)
+                if !searchVM.searchQuery.isEmpty {
+                    ProgressView()
+                } else {
+                    EmptyPlaceholderView(text: "Type your query to search from News API", image: Image(systemName: "magnifyingglass"))
                 }
 #elseif os(macOS) || os(watchOS)
                 ProgressView()

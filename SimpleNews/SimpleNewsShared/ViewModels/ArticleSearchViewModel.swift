@@ -5,6 +5,7 @@
 //  Created by Personal on 08/10/2023.
 //
 
+import Combine
 import SwiftUI
 
 @MainActor
@@ -19,6 +20,8 @@ class ArticleSearchViewModel: ObservableObject {
     private let historyDataStore = PlistDataStore<[String]>(filename: "histories")
     private let historyMaxLimit = 10
     
+    private var cancellables = Set<AnyCancellable>()
+    
     static let shared = ArticleSearchViewModel()
     private var trimmedSearchQuery: String {
         searchQuery.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -26,6 +29,21 @@ class ArticleSearchViewModel: ObservableObject {
     
     private init() {
         load()
+        #if os(tvOS)
+        observeSearchQuery()
+        #endif
+    }
+    
+    private func observeSearchQuery() {
+        $searchQuery
+            .debounce(for: 1, scheduler: DispatchQueue.main)
+            .sink { _ in
+                Task { [weak self] in
+                    guard let self = self else { return }
+                    await self.searchArticle()
+                }
+            }
+            .store(in: &cancellables)
     }
     
     func addHistory(_ text: String) {

@@ -17,7 +17,9 @@ struct BookmarkTabView: View {
         
         ArticleListView(articles: articles)
         .overlay(OverlayView(isEmpty: articles.isEmpty))
+        #if !os(tvOS)
         .navigationTitle("Saved Articles")
+        #endif
         #if os(macOS)
         .navigationSubtitle("\(articles.count) bookmark(s)")
         #endif
