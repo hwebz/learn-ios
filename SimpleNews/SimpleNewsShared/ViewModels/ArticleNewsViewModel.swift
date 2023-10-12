@@ -30,6 +30,7 @@ class ArticleNewsViewModel: ObservableObject {
         }
     }
     @AppStorage("item_selection") private var selectedMenuItemId: MenuItem.ID?
+    private let cache = InMemoryCache<[Article]>(expirationInterval: 2 * 60)
     
     private let newsAPI = NewsAPI.shared
     
@@ -68,11 +69,22 @@ class ArticleNewsViewModel: ObservableObject {
         // JSON data
 //        phase = .success(Article.previewData)
         if Task.isCancelled { return }
+        
+        let category = fetchTaskToken.category
+        if let articles = await cache.value(forKey: category.rawValue) {
+            phase = .success(articles)
+            print("CACHE: Loaded articles for category: \(category.rawValue)")
+            return
+        }
+        
+        print("CACHE: Missed or expired")
         phase = .empty
         do {
 //            let articles = try await newsAPI.fetch(from: selectedCategory)
             let articles = try await newsAPI.fetch(from: fetchTaskToken.category)
             if Task.isCancelled { return }
+            await cache.setValue(articles, for: category.rawValue)
+            print("CACHE: Set articles for category: \(category.rawValue)")
             phase = .success(articles)
         } catch {
             if Task.isCancelled { return }
