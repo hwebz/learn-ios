@@ -20,8 +20,8 @@ struct NewsAPI {
         return decoder
     }()
     
-    func fetch(from category: Category) async throws -> [Article] {
-        let url = generateNewsURL(from: category)
+    func fetch(from category: Category, page: Int = 1, pageSize: Int = 20) async throws -> [Article] {
+        let url = generateNewsURL(from: category, page: page, pageSize: pageSize)
         return try await fetchArticles(from: url)
     }
     
@@ -106,11 +106,13 @@ struct NewsAPI {
         return URL(string: url)!
     }
     
-    private func generateNewsURL(from category: Category) -> URL {
+    private func generateNewsURL(from category: Category, page: Int = 1, pageSize: Int = 20) -> URL {
         var url = "https://newsapi.org/v2/top-headlines?"
         url += "apiKey=\(apiKey)"
         url += "&language=en"
         url += "&category=\(category.rawValue)"
+        url += "&page=\(page)"
+        url += "&pageSize=\(pageSize)"
         print("URL: ", url)
         
         return URL(string: url)!

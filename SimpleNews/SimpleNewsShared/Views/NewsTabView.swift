@@ -46,7 +46,9 @@ struct NewsTabView: View {
     }
     
     var body: some View {
-        ArticleListView(articles: articles)
+        ArticleListView(articles: articleNewsVM.articles, isFetchingNextPage: articleNewsVM.isFetchingNextPage, nextPageHandler: {
+            await articleNewsVM.loadNextPage()
+        })
             .overlay(OverlayView)
             .navigationTitle(articleNewsVM.fetchTaskToken.category.text)
             .task(id: articleNewsVM.fetchTaskToken, loadTask)
@@ -89,13 +91,14 @@ struct NewsTabView: View {
         }
     }
     
-    private var articles: [Article] {
-        if case let .success(articles) = articleNewsVM.phase {
-            return articles
-        } else {
-            return []
-        }
-    }
+    // Use articleNewsVM.articles instead
+//    private var articles: [Article] {
+//        if case let .success(articles) = articleNewsVM.phase {
+//            return articles
+//        } else {
+//            return []
+//        }
+//    }
     
     private func forceRefreshArticles() {
         articleNewsVM.fetchTaskToken = FetchTaskToken(category: articleNewsVM.fetchTaskToken.category, token: Date())
@@ -108,7 +111,7 @@ struct NewsTabView: View {
 //    }
     
     @Sendable private func loadTask() async {
-        await articleNewsVM.loadArticles()
+        await articleNewsVM.loadFirstPage()
     }
     
     @Sendable private func refreshTask() async {

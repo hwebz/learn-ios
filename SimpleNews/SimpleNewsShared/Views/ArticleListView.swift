@@ -18,6 +18,9 @@ struct ArticleListView: View {
     let articles: [Article]
 //    @State private var selectedArticle: Article?
     
+    var isFetchingNextPage = false
+    var nextPageHandler: (() async -> ())? = nil
+    
     var body: some View {
         rootView
         #if os(iOS)
@@ -45,23 +48,31 @@ struct ArticleListView: View {
         #endif
     }
     
+    @ViewBuilder
+    private var bottomProgressView: some View {
+        Divider()
+        HStack {
+            Spacer()
+            ProgressView()
+            Spacer()
+        }
+        .padding()
+    }
+    
     #if os(iOS) || os(watchOS)
     var listView: some View {
         List {
             ForEach(articles) { article in
-                #if os(iOS)
-                ArticleRowView(article: article)
-                    .onTapGesture {
-//                        selectedArticle = article
-                        selectedArticleURL = article.articleURL
+                if let nextPageHandler = nextPageHandler, article == articles.last {
+                    listRowView(for: article)
+                        .task { await nextPageHandler() }
+                    
+                    if isFetchingNextPage {
+                        bottomProgressView
                     }
-                #elseif os(watchOS)
-                NavigationLink(destination: {
-                    ArticleDetailView(article: article)
-                }, label: {
-                    ArticleRowView(article: article)
-                })
-                #endif
+                } else {
+                    listRowView(for: article)
+                }
             }
             #if os(iOS)
             .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
@@ -72,43 +83,73 @@ struct ArticleListView: View {
     }
     #endif
     
+    private func listRowView(for article: Article) -> some View {
+#if os(iOS)
+        ArticleRowView(article: article)
+            .onTapGesture {
+                //                        selectedArticle = article
+                selectedArticleURL = article.articleURL
+            }
+#elseif os(watchOS)
+        NavigationLink(destination: {
+            ArticleDetailView(article: article)
+        }, label: {
+            ArticleRowView(article: article)
+        })
+#endif
+    }
+    
     private var gridView: some View {
         ScrollView {
             LazyVGrid(columns: gridItems, spacing: gridSpacing) {
                 ForEach(articles) { article in
-                    #if os(tvOS)
-                    NavigationLink {
-                        ArticleDetailView(article: article)
-                    } label: {
-                        ArticleItemView(article: article)
-                            .frame(width: 400, height: 400)
+                    if let nextPageHandler = nextPageHandler, article == articles.last {
+                        gridItemView(for: article)
+                            .task { await nextPageHandler() }
+                    } else {
+                        gridItemView(for: article)
                     }
-                    #else
-                    ArticleRowView(article: article)
-                        .onTapGesture {
-                            handleOnTapGesture(article: article)
-                        }
-                        #if os(iOS)
-                        .frame(height: 360)
-                        .background(Color(uiColor: .systemBackground))
-                        #elseif os(macOS)
-                        .frame(height: 376)
-                        .background(Color(nsColor: colorScheme == .light ? .textBackgroundColor : .windowBackgroundColor))
-                        #endif
-                        .mask(RoundedRectangle(cornerRadius: 8))
-                        .shadow(radius: 4)
-                        .padding(.bottom)
-                    #endif
                 }
             }
             .padding()
+            
+            if isFetchingNextPage {
+                bottomProgressView
+            }
         }
         #if os(iOS)
         .background(Color(uiColor: .secondarySystemGroupedBackground))
         #endif
     }
     
-    private gridSpacing: CGFloat? {
+    @ViewBuilder
+    private func gridItemView(for article: Article) -> some View {
+#if os(tvOS)
+        NavigationLink {
+            ArticleDetailView(article: article)
+        } label: {
+            ArticleItemView(article: article)
+                .frame(width: 400, height: 400)
+        }
+#else
+        ArticleRowView(article: article)
+            .onTapGesture {
+                handleOnTapGesture(article: article)
+            }
+#if os(iOS)
+            .frame(height: 360)
+            .background(Color(uiColor: .systemBackground))
+#elseif os(macOS)
+            .frame(height: 376)
+            .background(Color(nsColor: colorScheme == .light ? .textBackgroundColor : .windowBackgroundColor))
+#endif
+            .mask(RoundedRectangle(cornerRadius: 8))
+            .shadow(radius: 4)
+            .padding(.bottom)
+#endif
+    }
+    
+    private var gridSpacing: CGFloat? {
         #if os(tvOS)
         48
         #else

@@ -36,10 +36,22 @@ class ArticleNewsViewModel: ObservableObject {
     private let cache = DiskCache<[Article]>(filename: "simple_news_articles", expirationInterval: 3 * 60)
     
     private let newsAPI = NewsAPI.shared
+    private let pagingData = PagingData(itemsPerPage: 10, maxPageLimit: 5)
+    
+    var articles: [Article] {
+        phase.value ?? []
+    }
     
     var lastRefreshedDateText: String {
         dateFormatter.timeStyle = .short
         return "Last refreshed at: \(dateFormatter.string(from: fetchTaskToken.token))"
+    }
+    
+    var isFetchingNextPage: Bool {
+        if case .fetchingNextPage = phase {
+            return true
+        }
+        return false
     }
     
     init(articles: [Article]? = nil, selectedCategory: Category = .general) {
@@ -79,35 +91,64 @@ class ArticleNewsViewModel: ObservableObject {
         fetchTaskToken.token = Date()
     }
     
-    func loadArticles() async {
+    func loadFirstPage() async {
         // JSON data
 //        phase = .success(Article.previewData)
         if Task.isCancelled { return }
         
-        let category = fetchTaskToken.category
-        if let articles = await cache.value(forKey: category.rawValue) {
-            phase = .success(articles)
-            print("CACHE: Loaded articles for category: \(category.rawValue)")
-            return
-        }
+        // Temporarily disable cache for doing paging
+//        let category = fetchTaskToken.category
+//        if let articles = await cache.value(forKey: category.rawValue) {
+//            phase = .success(articles)
+//            print("CACHE: Loaded articles for category: \(category.rawValue)")
+//            return
+//        }
         
         print("CACHE: Missed or expired")
         phase = .empty
         do {
+            await pagingData.reset()
 //            let articles = try await newsAPI.fetch(from: selectedCategory)
-            let articles = try await newsAPI.fetch(from: fetchTaskToken.category)
+            let articles = try await pagingData.loadNextPage(dataFetchProvider: loadArticles(page:))
             if Task.isCancelled { return }
-            await cache.setValue(articles, for: category.rawValue)
+//            await cache.setValue(articles, for: category.rawValue)
             
             // Only need if used Disk cache
-            try? await cache.saveToDisk()
+//            try? await cache.saveToDisk()
             
-            print("CACHE: Set articles for category: \(category.rawValue)")
+//            print("CACHE: Set articles for category: \(category.rawValue)")
             phase = .success(articles)
         } catch {
             if Task.isCancelled { return }
             print(error)
             phase = .failure(error)
         }
+    }
+    
+    func loadNextPage() async {
+        if Task.isCancelled { return }
+        
+        let articles = self.phase.value ?? []
+        phase = .fetchingNextPage(articles)
+        
+        do {
+            let nextArticles = try await pagingData.loadNextPage(dataFetchProvider: loadArticles(page:))
+            if Task.isCancelled { return }
+            
+            phase = .success(articles + nextArticles)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    private func loadArticles(page: Int) async throws -> [Article] {
+        let articles = try await newsAPI.fetch(
+            from: fetchTaskToken.category,
+            page: page,
+            pageSize: pagingData.itemsPerPage
+        )
+        
+        if (Task.isCancelled) { return [] }
+        return articles
     }
 }

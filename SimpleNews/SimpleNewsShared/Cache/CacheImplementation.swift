@@ -40,7 +40,7 @@ actor DiskCache<V: Codable>: NSCacheType {
     }
     
     func saveToDisk() throws {
-        let entries = keysTracker.keys.compactMap { entry(forKey: $0.key) }
+        let entries = keysTracker.keys.compactMap { entry(forKey: $0) }
         
         let data = try JSONEncoder().encode(entries)
         try data.write(to: saveLocationURL)
