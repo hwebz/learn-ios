@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct SimpleNewsTVApp: App {
+    
+    @StateObject private var bookmarkVM: ArticleBookmarkViewModel = ArticleBookmarkViewModel.shared
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ContentView()
+                    .environmentObject(bookmarkVM)
+            }
         }
     }
 }

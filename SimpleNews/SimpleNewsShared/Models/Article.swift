@@ -63,7 +63,7 @@ extension Article: Identifiable {
 }
 
 extension Article {
-    static var previewData: [Article]? {
+    static var previewData: [Article] {
         // Must include news.json in Project Settings -> Build Phases -> Copy Bundle Resources -> Add your json file
         if let previewDataURL = Bundle.main.url(forResource: "news", withExtension: "json") {
             let data = try! Data(contentsOf: previewDataURL)
@@ -72,9 +72,16 @@ extension Article {
             jsonDecoder.dateDecodingStrategy = .iso8601
             
             let apiResponse = try! jsonDecoder.decode(NewsAPIResponse.self, from: data)
-            return apiResponse.articles ?? nil
+            return apiResponse.articles ?? []
         }
-        return nil
+        return []
+    }
+    
+    static var previewCategoryArticles: [CategoryArticles] {
+        let articles = previewData
+        return Category.allCases.map {
+            .init(category: $0, articles: articles.shuffled())
+        }
     }
 }
 
