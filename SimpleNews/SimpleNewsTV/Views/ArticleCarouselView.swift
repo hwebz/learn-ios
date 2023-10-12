@@ -30,6 +30,13 @@ struct ArticleCarouselView: View {
                                 .frame(width: 420, height: 420)
                         }
                         .buttonStyle(.card)
+                        .contextMenu {
+                            Button {
+                                bookmarkVM.toggleBookmark(for: article)
+                            } label: {
+                                Text(bookmarkVM.isBookmarked(for: article) ? "Remove Bookmark" : "Add Bookmark")
+                            }
+                        }
 
                     }
                 }
