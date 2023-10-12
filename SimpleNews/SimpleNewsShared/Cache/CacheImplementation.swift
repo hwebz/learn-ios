@@ -7,14 +7,20 @@
 
 import Foundation
 
-actor InMemoryCache<V> {
-    private let cache: NSCache<NSString, CacheEntry<V>> = .init()
-    private let expirationInterval: TimeInterval
+fileprivate protocol NSCacheType: Cache {
+    var cache: NSCache<NSString, CacheEntry<V>> { get }
+}
+
+actor InMemoryCache<V>: NSCacheType {
+    fileprivate let cache: NSCache<NSString, CacheEntry<V>> = .init()
+    let expirationInterval: TimeInterval
     
     init(expirationInterval: TimeInterval) {
         self.expirationInterval = expirationInterval
     }
-    
+}
+
+extension NSCacheType {
     func removeValue(forKey key: String) {
         cache.removeObject(forKey: key as NSString)
     }
@@ -45,4 +51,23 @@ actor InMemoryCache<V> {
         
         return entry.value
     }
+    
+    func entry(forKey key: String) -> CacheEntry<V>? {
+        guard let entry = cache.object(forKey: key as NSString) else {
+            return nil
+        }
+        
+        guard !entry.isCacheExpired(after: Date()) else {
+            removeValue(forKey: key)
+            return nil
+        }
+        
+        return entry
+    }
+    
+    func insert(_ entry: CacheEntry<V>) {
+        cache.setObject(entry, forKey: entry.key as NSString)
+    }
 }
+
+

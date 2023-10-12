@@ -50,15 +50,15 @@ struct NewsTabView: View {
             .overlay(OverlayView)
             .navigationTitle(articleNewsVM.fetchTaskToken.category.text)
             .task(id: articleNewsVM.fetchTaskToken, loadTask)
-            .refreshable(action: loadTask)
+            .refreshable(action: refreshTask)
             #if os(iOS)
             .navigationBarItems(trailing: navigationBarItem)
             #elseif os(macOS)
             .navigationSubtitle(articleNewsVM.lastRefreshedDateText)
-            .focusedSceneValue(\.refreshAction, refreshTask)
+            .focusedSceneValue(\.refreshAction, forceRefreshArticles)
             .toolbar {
                 ToolbarItem(placement: .automatic) {
-                    Button(action: refreshTask) {
+                    Button(action: forceRefreshArticles) {
                         Image(systemName: "arrow.clockwise")
                             .imageScale(.large)
                     }
@@ -83,7 +83,7 @@ struct NewsTabView: View {
 ////                    })
 ////                    loadTask()
 //                }
-                RetryView(text: error.localizedDescription, retryAction: refreshTask)
+                RetryView(text: error.localizedDescription, retryAction: forceRefreshArticles)
             default:
                 EmptyView()
         }
@@ -97,7 +97,7 @@ struct NewsTabView: View {
         }
     }
     
-    private func refreshTask() {
+    private func forceRefreshArticles() {
         articleNewsVM.fetchTaskToken = FetchTaskToken(category: articleNewsVM.fetchTaskToken.category, token: Date())
     }
     
@@ -111,12 +111,18 @@ struct NewsTabView: View {
         await articleNewsVM.loadArticles()
     }
     
+    @Sendable private func refreshTask() async {
+        Task {
+            await articleNewsVM.refreshTask()
+        }
+    }
+    
     #if os(iOS)
     @ViewBuilder
     private var navigationBarItem: some View {
         switch horizontalSizeClass {
             case .regular:
-                Button(action: refreshTask) {
+                Button(action: forceRefreshArticles) {
                     Image(systemName: "arrow.clockwise")
                         .imageScale(.large)
                 }

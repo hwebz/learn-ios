@@ -65,6 +65,12 @@ class ArticleNewsViewModel: ObservableObject {
 //            phase = .failure(NSError(domain: "NewsAPI", code: 1, userInfo: [NSLocalizedDescriptionKey: "Network Failed"]))
 //        }
 //    }
+    
+    func refreshTask() async {
+        await cache.removeValue(forKey: fetchTaskToken.category.rawValue)
+        fetchTaskToken.token = Date()
+    }
+    
     func loadArticles() async {
         // JSON data
 //        phase = .success(Article.previewData)
