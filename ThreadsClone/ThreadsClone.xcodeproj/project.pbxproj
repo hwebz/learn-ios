@@ -12,6 +12,9 @@
 		0D0DA3272B0BD9E5005EF6BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D0DA3262B0BD9E5005EF6BB /* Assets.xcassets */; };
 		0D0DA32A2B0BD9E5005EF6BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D0DA3292B0BD9E5005EF6BB /* Preview Assets.xcassets */; };
 		0D0DA33B2B0BDA5C005EF6BB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DA33A2B0BDA5C005EF6BB /* LoginView.swift */; };
+		0D0DA33D2B0BDD22005EF6BB /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DA33C2B0BDD22005EF6BB /* RegistrationView.swift */; };
+		0D0DA3402B0BDE22005EF6BB /* ThreadsTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DA33F2B0BDE22005EF6BB /* ThreadsTextFieldModifier.swift */; };
+		0D0DA3422B0BDEFF005EF6BB /* ThreadsButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DA3412B0BDEFF005EF6BB /* ThreadsButtonModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		0D0DA3262B0BD9E5005EF6BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D0DA3292B0BD9E5005EF6BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0D0DA33A2B0BDA5C005EF6BB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		0D0DA33C2B0BDD22005EF6BB /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		0D0DA33F2B0BDE22005EF6BB /* ThreadsTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTextFieldModifier.swift; sourceTree = "<group>"; };
+		0D0DA3412B0BDEFF005EF6BB /* ThreadsButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsButtonModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +59,12 @@
 		0D0DA3212B0BD9E4005EF6BB /* ThreadsClone */ = {
 			isa = PBXGroup;
 			children = (
-				0D0DA3362B0BDA11005EF6BB /* Utils */,
 				0D0DA3352B0BDA0F005EF6BB /* App */,
 				0D0DA3342B0BDA0E005EF6BB /* Core */,
-				0D0DA3332B0BDA0C005EF6BB /* Services */,
 				0D0DA3322B0BDA0A005EF6BB /* Extensions */,
 				0D0DA3302B0BD9FE005EF6BB /* Model */,
+				0D0DA3332B0BDA0C005EF6BB /* Services */,
+				0D0DA3362B0BDA11005EF6BB /* Utils */,
 				0D0DA3222B0BD9E4005EF6BB /* ThreadsCloneApp.swift */,
 				0D0DA3262B0BD9E5005EF6BB /* Assets.xcassets */,
 				0D0DA3282B0BD9E5005EF6BB /* Preview Content */,
@@ -114,6 +120,7 @@
 		0D0DA3362B0BDA11005EF6BB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0D0DA33E2B0BDE13005EF6BB /* ViewModifiers */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -138,8 +145,18 @@
 			isa = PBXGroup;
 			children = (
 				0D0DA33A2B0BDA5C005EF6BB /* LoginView.swift */,
+				0D0DA33C2B0BDD22005EF6BB /* RegistrationView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0D0DA33E2B0BDE13005EF6BB /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				0D0DA33F2B0BDE22005EF6BB /* ThreadsTextFieldModifier.swift */,
+				0D0DA3412B0BDEFF005EF6BB /* ThreadsButtonModifier.swift */,
+			);
+			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,9 +229,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D0DA3422B0BDEFF005EF6BB /* ThreadsButtonModifier.swift in Sources */,
 				0D0DA33B2B0BDA5C005EF6BB /* LoginView.swift in Sources */,
 				0D0DA3252B0BD9E4005EF6BB /* ContentView.swift in Sources */,
+				0D0DA3402B0BDE22005EF6BB /* ThreadsTextFieldModifier.swift in Sources */,
 				0D0DA3232B0BD9E4005EF6BB /* ThreadsCloneApp.swift in Sources */,
+				0D0DA33D2B0BDD22005EF6BB /* RegistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
