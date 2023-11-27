@@ -25,6 +25,7 @@
 		0D8A56D02B14FF3200AAB953 /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A56CF2B14FF3200AAB953 /* CircularProfileImageView.swift */; };
 		0D8A56D22B14FF9200AAB953 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A56D12B14FF9200AAB953 /* UserCell.swift */; };
 		0D8A56D72B1501A200AAB953 /* ProfileThreadFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A56D62B1501A200AAB953 /* ProfileThreadFilter.swift */; };
+		0D8A56D92B15053D00AAB953 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A56D82B15053D00AAB953 /* EditProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		0D8A56CF2B14FF3200AAB953 /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
 		0D8A56D12B14FF9200AAB953 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		0D8A56D62B1501A200AAB953 /* ProfileThreadFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileThreadFilter.swift; sourceTree = "<group>"; };
+		0D8A56D82B15053D00AAB953 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				0D0DA3592B0BE247005EF6BB /* ProfileView.swift */,
+				0D8A56D82B15053D00AAB953 /* EditProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D0DA3562B0BE22D005EF6BB /* ActivityView.swift in Sources */,
+				0D8A56D92B15053D00AAB953 /* EditProfileView.swift in Sources */,
 				0D0DA3512B0BE20E005EF6BB /* CreateThreadView.swift in Sources */,
 				0D0DA3492B0BE1C8005EF6BB /* FeedView.swift in Sources */,
 				0D8A56D72B1501A200AAB953 /* ProfileThreadFilter.swift in Sources */,
