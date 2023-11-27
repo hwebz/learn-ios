@@ -21,6 +21,7 @@
 		0D0DA3512B0BE20E005EF6BB /* CreateThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DA3502B0BE20E005EF6BB /* CreateThreadView.swift */; };
 		0D0DA3562B0BE22D005EF6BB /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DA3552B0BE22D005EF6BB /* ActivityView.swift */; };
 		0D0DA35A2B0BE247005EF6BB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DA3592B0BE247005EF6BB /* ProfileView.swift */; };
+		0D8A56CD2B14FA5300AAB953 /* ThreadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A56CC2B14FA5300AAB953 /* ThreadCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		0D0DA3502B0BE20E005EF6BB /* CreateThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateThreadView.swift; sourceTree = "<group>"; };
 		0D0DA3552B0BE22D005EF6BB /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		0D0DA3592B0BE247005EF6BB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		0D8A56CC2B14FA5300AAB953 /* ThreadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				0D0DA3482B0BE1C8005EF6BB /* FeedView.swift */,
+				0D8A56CC2B14FA5300AAB953 /* ThreadCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				0D0DA3422B0BDEFF005EF6BB /* ThreadsButtonModifier.swift in Sources */,
 				0D0DA3452B0BE055005EF6BB /* ThreadsTabView.swift in Sources */,
 				0D0DA33B2B0BDA5C005EF6BB /* LoginView.swift in Sources */,
+				0D8A56CD2B14FA5300AAB953 /* ThreadCell.swift in Sources */,
 				0D0DA3252B0BD9E4005EF6BB /* ContentView.swift in Sources */,
 				0D0DA3402B0BDE22005EF6BB /* ThreadsTextFieldModifier.swift in Sources */,
 				0D0DA3232B0BD9E4005EF6BB /* ThreadsCloneApp.swift in Sources */,
