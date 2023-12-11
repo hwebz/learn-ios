@@ -49,6 +49,7 @@
 		0D9EBDE12B27100300C15562 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9EBDE02B27100300C15562 /* Thread.swift */; };
 		0D9EBDE52B2710B000C15562 /* CreateThreadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9EBDE42B2710B000C15562 /* CreateThreadViewModel.swift */; };
 		0D9EBDE72B2710C600C15562 /* ThreadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9EBDE62B2710C600C15562 /* ThreadService.swift */; };
+		0D9EBDEA2B2716A300C15562 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9EBDE92B2716A300C15562 /* FeedViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		0D9EBDE02B27100300C15562 /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		0D9EBDE42B2710B000C15562 /* CreateThreadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateThreadViewModel.swift; sourceTree = "<group>"; };
 		0D9EBDE62B2710C600C15562 /* ThreadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadService.swift; sourceTree = "<group>"; };
+		0D9EBDE92B2716A300C15562 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +257,7 @@
 		0D0DA3462B0BE1B8005EF6BB /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				0D9EBDE82B27169700C15562 /* ViewModel */,
 				0D0DA3472B0BE1BF005EF6BB /* View */,
 			);
 			path = Feed;
@@ -456,6 +459,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		0D9EBDE82B27169700C15562 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0D9EBDE92B2716A300C15562 /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -538,6 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D9EBDEA2B2716A300C15562 /* FeedViewModel.swift in Sources */,
 				0D0DA3562B0BE22D005EF6BB /* ActivityView.swift in Sources */,
 				0D84B7582B1675370092A98B /* RegistrationViewModel.swift in Sources */,
 				0D8A56D92B15053D00AAB953 /* EditProfileView.swift in Sources */,
