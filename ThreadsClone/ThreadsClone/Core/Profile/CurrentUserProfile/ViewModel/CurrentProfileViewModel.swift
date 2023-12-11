@@ -9,14 +9,15 @@ import Foundation
 import Firebase
 import Combine
 
-class ProfileViewModel: ObservableObject {
+class CurrentProfileViewModel: ObservableObject {
     @Published var currentUser: User?
     private var cancellables = Set<AnyCancellable>()
     
     init() {
-        setupSubscribers()
+        Task { await setupSubscribers() }
     }
     
+    @MainActor
     private func setupSubscribers() {
         UserService.shared.$currentUser.sink { [weak self] user in
             self?.currentUser = user
