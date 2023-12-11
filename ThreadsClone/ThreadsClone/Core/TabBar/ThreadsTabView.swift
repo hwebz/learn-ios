@@ -18,7 +18,9 @@ struct ThreadsTabView: View {
                     Image(systemName: selectedTab == 0 ? "house.fill" : "house")
                         .environment(\.symbolVariants, selectedTab == 0 ? .fill : .none)
                 }
-                .onAppear { selectedTab = 0 }
+                .onAppear {
+                    selectedTab = 0
+                }
                 .tag(0)
             
             ExploreView()

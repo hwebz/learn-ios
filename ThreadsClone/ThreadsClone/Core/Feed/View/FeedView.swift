@@ -21,9 +21,17 @@ struct FeedView: View {
             }
             .refreshable {
                 print("DEBUG: Refresh threads")
+                Task { try await viewModel.fetchThreads() }
             }
             .navigationTitle("Threads")
             .navigationBarTitleDisplayMode(.inline)
+            // Automatically fetching new threads whenever this view appreared
+            // To prevent the unnecessary fetch (fetched only after create new thread)
+            // we need to create viewModel in parent's view
+            // and then fetching threads when it's needed
+//            .onAppear {
+//                Task { try await viewModel.fetchThreads() }
+//            }
         }
         .toolbar {
             Button {
