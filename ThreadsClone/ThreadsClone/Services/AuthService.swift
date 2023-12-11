@@ -24,6 +24,7 @@ class AuthService {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
+            try await UserService.shared.fetchCurrentUser()
             print("DEBUG: Signed in user \(result.user.uid)")
         } catch {
             print("DEBUG: Failed to sign in with error \(error.localizedDescription)")
@@ -45,6 +46,7 @@ class AuthService {
     func signOut() {
         try? Auth.auth().signOut() // signs out on backend
         self.userSession = nil // this removes session locally and updates routing
+        UserService.shared.reset() // set current user object to nil
     }
     
     private func uploadUserData(
@@ -56,5 +58,6 @@ class AuthService {
         let user = User(id: id, fullname: fullname, email: email, username: username)
         guard let userData = try? Firestore.Encoder().encode(user) else { return }
         try await Firestore.firestore().collection("users").document(id).setData(userData)
+        UserService.shared.currentUser = user
     }
 }
