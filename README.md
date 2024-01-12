@@ -242,3 +242,11 @@
     <img src="./screenshots/google-auth-6.png" width="200" />
     <img src="./screenshots/google-auth-7.png" width="200" />
 </div>
+
+### Google Firebase Authentication (Login/Signup/Logout/Forgot Password/Delete Account)
+> /SmartHomeUI
+
+#### Screenshots
+<div class="flex">
+    <img src="./screenshots/smart-home-ui.png" width="200" />
+</div>
