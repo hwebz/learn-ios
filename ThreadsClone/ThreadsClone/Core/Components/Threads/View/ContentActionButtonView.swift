@@ -58,12 +58,22 @@ struct ContentActionButtonView: View {
             .padding(.top, 8)
             .foregroundColor(.black)
             
-            if (viewModel.thread.likes > 0) {
-                Text("\(viewModel.thread.likes) likes")
-                    .font(.caption)
-                    .foregroundColor(.gray)
-                    .padding(.vertical, 4)
+            HStack(spacing: 4) {
+                if (viewModel.thread.replyCount > 0) {
+                    Text("\(viewModel.thread.replyCount) replies")
+                }
+                
+                if (viewModel.thread.replyCount > 0 && viewModel.thread.likes > 0) {
+                    Text("-")
+                }
+                
+                if (viewModel.thread.likes > 0) {
+                    Text("\(viewModel.thread.likes) likes")
+                }
             }
+            .font(.caption)
+            .foregroundColor(.gray)
+            .padding(.vertical, 4)
         }
         .sheet(isPresented: $showReplySheet) {
             ThreadReplyView(thread: viewModel.thread)
