@@ -20,6 +20,8 @@
 		0D0DA3512B0BE20E005EF6BB /* CreateThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DA3502B0BE20E005EF6BB /* CreateThreadView.swift */; };
 		0D0DA3562B0BE22D005EF6BB /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DA3552B0BE22D005EF6BB /* ActivityView.swift */; };
 		0D0DA35A2B0BE247005EF6BB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DA3592B0BE247005EF6BB /* ProfileView.swift */; };
+		0D2F45072B58E2A0000631F0 /* ContentActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F45062B58E2A0000631F0 /* ContentActionButtonView.swift */; };
+		0D2F450B2B58E313000631F0 /* ContentActionButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F450A2B58E313000631F0 /* ContentActionButtonViewModel.swift */; };
 		0D84B7582B1675370092A98B /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D84B7572B1675370092A98B /* RegistrationViewModel.swift */; };
 		0D84B75A2B1676450092A98B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D84B7592B1676450092A98B /* AuthService.swift */; };
 		0D84B75E2B1679740092A98B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D84B75D2B1679740092A98B /* ContentView.swift */; };
@@ -69,6 +71,8 @@
 		0D0DA3502B0BE20E005EF6BB /* CreateThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateThreadView.swift; sourceTree = "<group>"; };
 		0D0DA3552B0BE22D005EF6BB /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		0D0DA3592B0BE247005EF6BB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		0D2F45062B58E2A0000631F0 /* ContentActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentActionButtonView.swift; sourceTree = "<group>"; };
+		0D2F450A2B58E313000631F0 /* ContentActionButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentActionButtonViewModel.swift; sourceTree = "<group>"; };
 		0D84B7572B1675370092A98B /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		0D84B7592B1676450092A98B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		0D84B75D2B1679740092A98B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -346,6 +350,41 @@
 			path = UserProfile;
 			sourceTree = "<group>";
 		};
+		0D2F45042B58E251000631F0 /* Threads */ = {
+			isa = PBXGroup;
+			children = (
+				0D2F45092B58E301000631F0 /* ViewModel */,
+				0D2F45082B58E2FB000631F0 /* View */,
+			);
+			path = Threads;
+			sourceTree = "<group>";
+		};
+		0D2F45052B58E257000631F0 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				0D8A56CF2B14FF3200AAB953 /* CircularProfileImageView.swift */,
+				0D8A56D12B14FF9200AAB953 /* UserCell.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		0D2F45082B58E2FB000631F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0D8A56CC2B14FA5300AAB953 /* ThreadCell.swift */,
+				0D2F45062B58E2A0000631F0 /* ContentActionButtonView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0D2F45092B58E301000631F0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0D2F450A2B58E313000631F0 /* ContentActionButtonViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		0D84B7562B16752C0092A98B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,9 +413,8 @@
 		0D8A56CE2B14FF2500AAB953 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				0D8A56CC2B14FA5300AAB953 /* ThreadCell.swift */,
-				0D8A56CF2B14FF3200AAB953 /* CircularProfileImageView.swift */,
-				0D8A56D12B14FF9200AAB953 /* UserCell.swift */,
+				0D2F45052B58E257000631F0 /* Users */,
+				0D2F45042B58E251000631F0 /* Threads */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -581,6 +619,7 @@
 				0D9EBDDC2B2706B500C15562 /* ImageUploader.swift in Sources */,
 				0D9EBDE72B2710C600C15562 /* ThreadService.swift in Sources */,
 				0D9EBDC52B26F51E00C15562 /* CurrentUserProfileViewModel.swift in Sources */,
+				0D2F45072B58E2A0000631F0 /* ContentActionButtonView.swift in Sources */,
 				0D0DA3492B0BE1C8005EF6BB /* FeedView.swift in Sources */,
 				0D9EBDCE2B26FD5900C15562 /* CurrentUserProfileView.swift in Sources */,
 				0D9EBDC22B26F45600C15562 /* UserService.swift in Sources */,
@@ -606,6 +645,7 @@
 				0D0DA33D2B0BDD22005EF6BB /* RegistrationView.swift in Sources */,
 				0D84B7622B167F920092A98B /* LoginViewModel.swift in Sources */,
 				0D9EBDCA2B26FB2E00C15562 /* PreviewProvider.swift in Sources */,
+				0D2F450B2B58E313000631F0 /* ContentActionButtonViewModel.swift in Sources */,
 				0D9EBDE12B27100300C15562 /* Thread.swift in Sources */,
 				0D9EBDEF2B271DB700C15562 /* UserContentListViewModel.swift in Sources */,
 			);
