@@ -34,16 +34,17 @@ struct CircularProfileImageView: View {
     
     var body: some View {
         if let imageUrl = user?.profileImageUrl {
+            // The reason why using KingFisher to load image because it has caching
             KFImage(URL(string: imageUrl))
                 .resizable()
                 .scaledToFill()
-                .frame(width: 40, height: 40)
+                .frame(width: size.dimension, height: size.dimension)
                 .clipShape(Circle())
         } else {
             Image(systemName: "person.circle.fill")
                 .resizable()
                 .scaledToFill()
-                .frame(width: 40, height: 40)
+                .frame(width: size.dimension, height: size.dimension)
                 .foregroundColor(Color(.systemGray4))
         }
     }
