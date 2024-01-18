@@ -27,34 +27,43 @@ struct ContentActionButtonView: View {
     }
     
     var body: some View {
-        HStack(spacing: 16) {
-            Button {
-                Task { try await handleLikeTapped() }
-            } label: {
-                Image(systemName: didLike ? "heart.fill" : "heart")
-                    .foregroundColor(didLike ? .red : .black)
-            }
-            
-            Button {
+        VStack(alignment: .leading) {
+            HStack(spacing: 16) {
+                Button {
+                    Task { try await handleLikeTapped() }
+                } label: {
+                    Image(systemName: didLike ? "heart.fill" : "heart")
+                        .foregroundColor(didLike ? .red : .black)
+                }
                 
-            } label: {
-                Image(systemName: "bubble.right")
-            }
-            
-            Button {
+                Button {
+                    
+                } label: {
+                    Image(systemName: "bubble.right")
+                }
                 
-            } label: {
-                Image(systemName: "arrow.rectanglepath")
-            }
-            
-            Button {
+                Button {
+                    
+                } label: {
+                    Image(systemName: "arrow.rectanglepath")
+                }
                 
-            } label: {
-                Image(systemName: "paperplane")
+                Button {
+                    
+                } label: {
+                    Image(systemName: "paperplane")
+                }
+            }
+            .padding(.top, 8)
+            .foregroundColor(.black)
+            
+            if (viewModel.thread.likes > 0) {
+                Text("\(viewModel.thread.likes) likes")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                    .padding(.vertical, 4)
             }
         }
-        .padding(.vertical, 8)
-        .foregroundColor(.black)
     }
 }
 
