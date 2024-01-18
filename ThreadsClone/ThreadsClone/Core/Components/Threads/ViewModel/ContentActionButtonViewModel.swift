@@ -14,11 +14,15 @@ class ContentActionButtonViewModel: ObservableObject {
         self.thread = thread
     }
     
-    func likeThread() {
+    func likeThread() async throws {
+        try await ThreadService.likeThread(thread)
         self.thread.didLike = true
+        self.thread.likes += 1
     }
     
-    func unlikeThread() {
+    func unlikeThread() async throws {
+        try await ThreadService.unlikeThread(thread)
         self.thread.didLike = false
+        self.thread.likes -= 1
     }
 }

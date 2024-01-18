@@ -18,18 +18,18 @@ struct ContentActionButtonView: View {
         return viewModel.thread.didLike ?? false
     }
     
-    func handleLikeTapped() {
+    func handleLikeTapped() async throws {
         if didLike {
-            viewModel.unlikeThread()
+            try await viewModel.unlikeThread()
         } else {
-            viewModel.likeThread()
+            try await viewModel.likeThread()
         }
     }
     
     var body: some View {
         HStack(spacing: 16) {
             Button {
-                handleLikeTapped()
+                Task { try await handleLikeTapped() }
             } label: {
                 Image(systemName: didLike ? "heart.fill" : "heart")
                     .foregroundColor(didLike ? .red : .black)
