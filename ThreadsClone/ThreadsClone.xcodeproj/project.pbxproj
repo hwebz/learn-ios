@@ -25,6 +25,9 @@
 		0D2F450D2B58E6EE000631F0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F450C2B58E6EE000631F0 /* Constants.swift */; };
 		0D2F45122B592F90000631F0 /* ThreadReplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F45112B592F90000631F0 /* ThreadReplyView.swift */; };
 		0D2F45142B59339A000631F0 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F45132B59339A000631F0 /* String.swift */; };
+		0D2F45172B59393E000631F0 /* ThreadReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F45162B59393E000631F0 /* ThreadReply.swift */; };
+		0D2F451A2B593A76000631F0 /* ThreadReplyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F45192B593A76000631F0 /* ThreadReplyService.swift */; };
+		0D2F451C2B593AE9000631F0 /* ThreadReplyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F451B2B593AE9000631F0 /* ThreadReplyViewModel.swift */; };
 		0D84B7582B1675370092A98B /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D84B7572B1675370092A98B /* RegistrationViewModel.swift */; };
 		0D84B75A2B1676450092A98B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D84B7592B1676450092A98B /* AuthService.swift */; };
 		0D84B75E2B1679740092A98B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D84B75D2B1679740092A98B /* ContentView.swift */; };
@@ -79,6 +82,9 @@
 		0D2F450C2B58E6EE000631F0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0D2F45112B592F90000631F0 /* ThreadReplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadReplyView.swift; sourceTree = "<group>"; };
 		0D2F45132B59339A000631F0 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		0D2F45162B59393E000631F0 /* ThreadReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadReply.swift; sourceTree = "<group>"; };
+		0D2F45192B593A76000631F0 /* ThreadReplyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadReplyService.swift; sourceTree = "<group>"; };
+		0D2F451B2B593AE9000631F0 /* ThreadReplyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadReplyViewModel.swift; sourceTree = "<group>"; };
 		0D84B7572B1675370092A98B /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		0D84B7592B1676450092A98B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		0D84B75D2B1679740092A98B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -397,6 +403,8 @@
 		0D2F450E2B592F5B000631F0 /* ThreadReplies */ = {
 			isa = PBXGroup;
 			children = (
+				0D2F45182B593A6D000631F0 /* Service */,
+				0D2F45152B593934000631F0 /* Model */,
 				0D2F45102B592F81000631F0 /* ViewModel */,
 				0D2F450F2B592F7B000631F0 /* Views */,
 			);
@@ -414,8 +422,25 @@
 		0D2F45102B592F81000631F0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0D2F451B2B593AE9000631F0 /* ThreadReplyViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0D2F45152B593934000631F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0D2F45162B59393E000631F0 /* ThreadReply.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0D2F45182B593A6D000631F0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0D2F45192B593A76000631F0 /* ThreadReplyService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		0D84B7562B16752C0092A98B /* ViewModels */ = {
@@ -648,8 +673,10 @@
 				0D8A56D92B15053D00AAB953 /* EditProfileView.swift in Sources */,
 				0D84B75A2B1676450092A98B /* AuthService.swift in Sources */,
 				0D2F45122B592F90000631F0 /* ThreadReplyView.swift in Sources */,
+				0D2F451C2B593AE9000631F0 /* ThreadReplyViewModel.swift in Sources */,
 				0D84B7602B16797F0092A98B /* ContentViewModel.swift in Sources */,
 				0D0DA3512B0BE20E005EF6BB /* CreateThreadView.swift in Sources */,
+				0D2F451A2B593A76000631F0 /* ThreadReplyService.swift in Sources */,
 				0D9EBDDC2B2706B500C15562 /* ImageUploader.swift in Sources */,
 				0D9EBDE72B2710C600C15562 /* ThreadService.swift in Sources */,
 				0D9EBDC52B26F51E00C15562 /* CurrentUserProfileViewModel.swift in Sources */,
@@ -677,6 +704,7 @@
 				0D8A56CD2B14FA5300AAB953 /* ThreadCell.swift in Sources */,
 				0D0DA3402B0BDE22005EF6BB /* ThreadsTextFieldModifier.swift in Sources */,
 				0D9EBDC82B26F9BA00C15562 /* ExploreViewModel.swift in Sources */,
+				0D2F45172B59393E000631F0 /* ThreadReply.swift in Sources */,
 				0D0DA3232B0BD9E4005EF6BB /* ThreadsCloneApp.swift in Sources */,
 				0D0DA33D2B0BDD22005EF6BB /* RegistrationView.swift in Sources */,
 				0D84B7622B167F920092A98B /* LoginViewModel.swift in Sources */,

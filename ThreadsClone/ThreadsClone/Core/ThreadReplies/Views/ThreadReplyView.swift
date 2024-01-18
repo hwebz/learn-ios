@@ -12,6 +12,7 @@ struct ThreadReplyView: View {
     @State private var replyText = ""
     @State private var threadViewHeight: CGFloat = 24
     @Environment(\.dismiss) var dismiss
+    @StateObject var viewModel = ThreadReplyViewModel()
     
     private var currentUser: User? {
         return UserService.shared.currentUser
@@ -89,6 +90,7 @@ struct ThreadReplyView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button("Post") {
                             Task {
+                                try await viewModel.uploadThreadReply(replyText: replyText, thread: thread)
                                 dismiss()
                             }
                         }

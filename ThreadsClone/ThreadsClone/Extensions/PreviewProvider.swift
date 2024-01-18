@@ -20,5 +20,5 @@ class DeveloperPreview {
     
     let user = User(id: NSUUID().uuidString, fullname: "Ha Manh Do", email: "hatest@gmail.com", username: "hadm")
     
-    let thread = Thread(ownerUid: "123", caption: "This is a test thread", timestamp: Timestamp(), likes: 0)
+    let thread = Thread(ownerUid: "123", caption: "This is a test thread", timestamp: Timestamp(), likes: 0, replyCount: 5)
 }
