@@ -15,7 +15,9 @@ struct FeedView: View {
             ScrollView(showsIndicators: false) {
                 LazyVStack {
                     ForEach(viewModel.threads) { thread in
-                        ThreadCell(thread: thread)
+                        NavigationLink(value: thread) {
+                            ThreadCell(thread: thread)
+                        }
                     }
                 }
             }
@@ -23,6 +25,9 @@ struct FeedView: View {
                 print("DEBUG: Refresh threads")
                 Task { try await viewModel.fetchThreads() }
             }
+            .navigationDestination(for: Thread.self, destination: { thread in
+                ThreadDetailsView(thread: thread)
+            })
             .navigationTitle("Threads")
             .navigationBarTitleDisplayMode(.inline)
             // Automatically fetching new threads whenever this view appreared

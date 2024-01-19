@@ -20,5 +20,22 @@ class DeveloperPreview {
     
     let user = User(id: NSUUID().uuidString, fullname: "Ha Manh Do", email: "hatest@gmail.com", username: "hadm")
     
-    let thread = Thread(ownerUid: "123", caption: "This is a test thread", timestamp: Timestamp(), likes: 0, replyCount: 5)
+    lazy var thread = Thread(
+        ownerUid: "123",
+        caption: "This is a test thread",
+        timestamp: Timestamp(),
+        likes: 0,
+        replyCount: 5,
+        user: user
+    )
+    
+    lazy var reply = ThreadReply(
+        threadId: "123",
+        replyText: "This a preview reply",
+        threadReplyOwnerUid: "1234",
+        threadOwnerUid: "12345",
+        timestamp: Timestamp(),
+        thread: thread,
+        replyUser: user
+    )
 }
