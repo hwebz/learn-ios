@@ -6,6 +6,18 @@
 
 module.exports = {
 
+  // custom JSON function
+  customToJSON: function() {
+    return {
+      id: this.id,
+      fullName: this.fullName,
+      emailAddress: this.emailAddress,
+    };
+
+    // OR omit field you don't want to expose
+    // return _.omit(this, ['password', 'ssn']);
+  },
+
   attributes: {
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
