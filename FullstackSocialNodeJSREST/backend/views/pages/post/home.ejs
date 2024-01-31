@@ -8,8 +8,12 @@
   Below are all of my posts:
   <% allPosts.forEach(p => { %>
     <div style="background-color: white; padding: 24px; margin-bottom: 12px;">
+      <p style="font-weight: bold;margin-bottom: 0"><%= p.user.fullName %></p>
+      <div style="color: rbb(186, 186, 186)">
+        <%= new Date(p.createdAt).toLocaleTimeString() + " " + new Date(p.createdAt).toLocaleDateString() %>
+      </div>
       <p><%= p.text %></p>
-      <p><%= p.createdAt %></p>
+      
     </div>
   <% }) %>
 

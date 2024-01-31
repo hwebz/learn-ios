@@ -177,6 +177,10 @@ without necessarily having a billing card.`
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
     // n/a
 
+    post: {
+      collection:'post',
+      via: 'user'
+    }
   },
 
 
