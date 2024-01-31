@@ -20,11 +20,6 @@ module.exports.session = {
   ***************************************************************************/
   secret: '861898d2c93a0f307c5eb71e6445f46c',
 
-  // adapter: 'sails-mongo',
-  // url: 'mongodb+srv://hdevz:e9X2ujsBdN8AjpJ7@cluster0.besxdb7.mongodb.net/?retryWrites=true&w=majority',
-  // collection: 'sessions',
-
-
   /***************************************************************************
   *                                                                          *
   * Customize when built-in session support will be skipped.                 *
