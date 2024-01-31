@@ -1,0 +1,16 @@
+<div style="background-color: rgba(238, 238, 238); padding: 24px;">
+  <p>Here is my post creation form</p>
+  <form style="margin-bottom: 12px;" action="/post" method="POST">
+    <input type="text" name="postBody" placeholder="Enter post text" />
+    <button type="submit">Create Post</button>
+  </form>
+
+  Below are all of my posts:
+  <% allPosts.forEach(p => { %>
+    <div style="background-color: white; padding: 24px; margin-bottom: 12px;">
+      <p><%= p.text %></p>
+      <p><%= p.createdAt %></p>
+    </div>
+  <% }) %>
+
+</div>
