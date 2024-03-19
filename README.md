@@ -250,3 +250,12 @@
 <div class="flex">
     <img src="./screenshots/smart-home-ui.png" width="200" />
 </div>
+
+### Sticky Header Scrolling to scale image + sticky buttons
+> /StickyHeader
+
+#### Screenshots
+<div class="flex">
+    <img src="./screenshots/sticky-header.png" width="200" />
+    <img src="./screenshots/sticky-header-1.png" width="200" />
+</div>
