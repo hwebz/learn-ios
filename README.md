@@ -259,3 +259,15 @@
     <img src="./screenshots/sticky-header.png" width="200" />
     <img src="./screenshots/sticky-header-1.png" width="200" />
 </div>
+
+### Onboarding Video with Sign Up Form
+> /SplashVideoOnboarding
+
+#### Screenshots
+<div class="flex">
+    <img src="./screenshots/onboarding-signup.png" width="200" />
+    <img src="./screenshots/onboarding-signup-1.png" width="200" />
+    <img src="./screenshots/onboarding-signup-2.png" width="200" />
+    <img src="./screenshots/onboarding-signup-3.png" width="200" />
+    <img src="./screenshots/onboarding-signup-4.png" width="200" />
+</div>
